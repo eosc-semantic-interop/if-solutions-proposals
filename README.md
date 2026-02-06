@@ -14,4 +14,8 @@ Liberally engage with the ongoing proposals here through issues, pull requests a
 
 Dare to start your own proposal-subfolder and trigger some collaboration around it.
 
+## current proposals in process
+
+* [Radical Transparency through conformity-profile declarations](./proposals/radical-transparency/conformity-profiles.md).
+
 
