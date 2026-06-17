@@ -1,16 +1,16 @@
 ## TODO list
 
 * complete the list of patterns
-  * RT-P01: Profile Conformity Declarations (Completed)
-  * RT-P02: Profile Composition (Completed — focused on recursive inference; versioning moved to #09)
-  * RT-P03: Conneg Menu Provisioning (Completed — includes the rel="self" identity anchor for redirects)
-  * RT-P04: No-Landing-Page Solution (Our current next step)
+  * RT-P01: ✅ Profile Conformity Declarations (central conformance declarations)
+  * RT-P02: ✅ Profile Composition (focused on recursive inference; versioning moved to #09)
+  * RT-P03: ✅ Conneg Menu Provisioning (includes the rel="self" identity anchor for redirects)
+  * RT-P04: ✅ No-Landing-Page Solution
   * RT-P05: Subsetting API Pattern
   * RT-P06: Host-wide Resource Discovery (New: Focused on mixing Linksets with Sitemaps/Signmaps)
   * RT-P07: Catalog Listings
   * RT-P08: Harvesting API
   * RT-P09: Version / Release Linking (Handling the timeline of both resources and profiles)
-  * RT-P10: Offline (Detached) Copies (For filesystem/detached verification)
+  * RT-P10: ✅ Offline (Detached) Copies (For filesystem/detached verification)
   * RT-P11: Large Linkset Splits (Paging and OGC-style large map handling)
   * RT-P12: API-UI & Aggregate Content Parts (Context of SPAs and JS-rendered content)
   * RT-P13: Web Manifests
