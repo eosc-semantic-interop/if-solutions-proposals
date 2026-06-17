@@ -1,0 +1,3 @@
+## -- current vague ideas
+
+* 
