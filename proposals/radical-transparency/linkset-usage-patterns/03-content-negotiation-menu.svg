@@ -136,7 +136,7 @@
          style="font-size:4.7625px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
          x="119.0625"
          y="42.994793"
-         id="tspan550"> -variant-uri&gt;</tspan></text>
+         id="tspan550"> -variantN-uri&gt;</tspan></text>
     <path
        id="path924"
        style="fill:none;stroke:#1a5fb4;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -250,5 +250,27 @@
        style="fill:none;stroke:#1a5fb4;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 66.004425,44.771014 60.722197,42.10638 m -2.66463,5.282226 2.66463,-5.282226 m 52.916343,0.188166 C 113.60094,52.877812 60.684574,52.689647 60.722197,42.10638"
        sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-align:center;text-anchor:middle;fill:#5e5c64;stroke-width:0.264583"
+       x="103.1875"
+       y="39.6875"
+       id="text1304"><tspan
+         sodipodi:role="line"
+         style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#5e5c64;fill-opacity:1;stroke-width:0.264583"
+         x="103.1875"
+         y="39.6875"
+         id="tspan1302">1..N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-align:center;text-anchor:middle;fill:#5e5c64;stroke-width:0.264583"
+       x="67.230652"
+       y="39.6875"
+       id="text1310"><tspan
+         sodipodi:role="line"
+         style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#5e5c64;fill-opacity:1;stroke-width:0.264583"
+         x="67.230652"
+         y="39.6875"
+         id="tspan1308">1</tspan></text>
   </g>
 </svg>

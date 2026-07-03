@@ -132,15 +132,29 @@ in `application/linkset` syntax:
 *Sketch of the linkset-usage-pattern for content-negotiation menu's* 
 
 
+## Link Relations Used
+
+The following link relations are in use to describe the links between a core conneg supporting identity and the alternatives it offers:
+
+| Relation Type	| Specification Source	| Technical Function | 
+| ------------- | ----------------------| ------------------ |
+| rel="self"	| [RFC 4287 - Atom Syndication Format][RFC 4287] | Acts as the Identity Anchor at each negotiation endpoint; it links the specific variants back to the central conceptual URI to restore the "Broken Chain" after redirects
+| rel="alternate"	| [RFC 8288 - Web Linking][RFC 8288] | Signals the availability of alternative representation variants (such as Turtle, JSON-LD, or HTML) for the conceptual resource
+| rel="linkset"	| [RFC 9264 - Linkset][RFC 9264] | Refers to the external Variant Menu (the linkset) in which all available options and their interrelationships are summarized in a machine-readable format.
+
+
+See [IANA Link relations][IANA relreg]
+
+
 ## Implementation Example: MarineInfo Case Study
 
 In this scenario, a machine agent requests the identity resource for a specific marine observation.
 
-Conceptual URI: https://marineinfo.org/id/36
-Target Variant: https://marineinfo.org/id/36.html
-Target Variant: https://marineinfo.org/id/36.ttl
-Target Variant: https://marineinfo.org/id/36.jsonld
-Variant Menu:   https://marineinfo.org/id/36-ls.json
+Conceptual URI: https://marineinfo.org/id/institute/36
+Target Variant: https://marineinfo.org/id/institute/36.html
+Target Variant: https://marineinfo.org/id/institute/36.ttl
+Target Variant: https://marineinfo.org/id/institute/36.jsonld
+Variant Menu:   https://marineinfo.org/id/institute/36-ls.json
 
 ### Conneg Request for text/turtle
 
@@ -148,13 +162,13 @@ The client requests the conceptual resource with a preference for turtle.
 The server redirects the agent while providing the linkset context.
 
 ```
-curl -I "https://marineinfo.org/id/36" -H "Accept: text/turtle"
+curl -I "https://marineinfo.org/id/institute/36" -H "Accept: text/turtle"
 ```
 
 ```
 HTTP/1.1 303 See Other
-Location: https://marineinfo.org/id/36.ttl
-Link: <https://marineinfo.org/id/36-ls.json>; rel="linkset"; type="application/linkset+json"
+Location: https://marineinfo.org/id/institute/36.ttl
+Link: <https://marineinfo.org/id/institute/36-ls.json>; rel="linkset"; type="application/linkset+json"
 ```
 
 
@@ -164,13 +178,13 @@ The agent fetches the Turtle representation.
 The response headers MUST restore the "Broken Chain" by providing the identity anchor and the alternate menu.
 
 ```
-curl -I "https://marineinfo.org/id/36.ttl" -H "Accept: text/turtle"
+curl -I "https://marineinfo.org/id/institute/36.ttl" -H "Accept: text/turtle"
 ```
 
 ```
 HTTP/1.1 200 OK
 Content-Type: text/turtle
-Link: <https://marineinfo.org/id/36-ls.json>; rel="linkset"; type="application/linkset+json"
+Link: <https://marineinfo.org/id/institute/36-ls.json>; rel="linkset"; type="application/linkset+json"
 ```
 
 
@@ -179,7 +193,7 @@ Link: <https://marineinfo.org/id/36-ls.json>; rel="linkset"; type="application/l
 The agent can additionally check for the availability of other variants through
 
 ```
-curl -I "https://marineinfo.org/id/36-ls.json" -H "Accept: application/linkset+json"
+curl -I "https://marineinfo.org/id/institute/36-ls.json" -H "Accept: application/linkset+json"
 ```
 
 ```
@@ -188,31 +202,46 @@ Content-Type: application/linkset+json
 
 { "linkset":
   [
-    { "anchor"   : "https://marineinfo.org/id/36",
+    { "anchor"   : "https://marineinfo.org/id/institute/36",
       "alternate": [
-        {"href"    : "https://marineinfo.org/id/36.ttl",
+        {"href"    : "https://marineinfo.org/id/institute/36.ttl",
          "type"    : "text/turtle; charset=utf-8"
         },
-        {"href"    : "https://marineinfo.org/id/36.jsonld",
+        {"href"    : "https://marineinfo.org/id/institute/36.jsonld",
          "type"    : "application/ld+json"
         },
-        {"href"    : "https://marineinfo.org/id/36.html",
+        {"href"    : "https://marineinfo.org/id/institute/36.html",
          "type"    : "text/html; charset=utf-8"
         }
       ]
     },
-    { "anchor"   : "https://marineinfo.org/id/36.ttl",
-      "self"     : [ {"href": "https://marineinfo.org/id/36"} ]
+    { "anchor"   : "https://marineinfo.org/id/institute/36.ttl",
+      "self"     : [ {"href": "https://marineinfo.org/id/institute/36"} ]
     }, 
-    { "anchor"   : "https://marineinfo.org/id/36.jsonld",
-      "self"     : [ {"href": "https://marineinfo.org/id/36"} ]
+    { "anchor"   : "https://marineinfo.org/id/institute/36.jsonld",
+      "self"     : [ {"href": "https://marineinfo.org/id/institute/36"} ]
     }, 
-    { "anchor"   : "https://marineinfo.org/id/36.html",
-      "self"     : [ {"href": "https://marineinfo.org/id/36"} ]
+    { "anchor"   : "https://marineinfo.org/id/institute/36.html",
+      "self"     : [ {"href": "https://marineinfo.org/id/institute/36"} ]
     }
   ]
 }
 ```
+
+
+[RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
+[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
+[RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
+[RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
+[RFC 8288]:       https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
+[RFC 9264]:       https://www.rfc-editor.org/info/rfc9264                             "RFC 9264 Linksets"
+[dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
+[ro-crate]:       https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
+[IANA relreg]:    https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
+[IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
+[OGCAPI]:         https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
+[CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
+[powder-dr]:      https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"
 
 
 [RT-P01]: ./01-profile-declaration.md "Profile Declaration"

@@ -83,6 +83,7 @@ The following link relations are mandated for declaring conformity.
 | Relation Type	| Specification Source	| Technical Function | 
 | ------------- | ----------------------| ------------------ |
 | rel="profile"	| [RFC 6906 - Profile Link-Relation][RFC 6906] | Identifies the conceptual entity (the profile) to which the asset claims to conform.
+| rel="type"    | [RFC 6903 - additional link types][RFC 6903] | (Optional) Explicitly types a resource as being a profile identifier, providing metadata about the role of the URI in the chain.
 
 
 See [IANA Link relations][IANA relreg]

@@ -49,6 +49,20 @@ to actually mean that the original `<resource-uri>` is conforming to all of the 
 *Sketch of the linkset-usage-pattern for profile-composition* 
 
 
+
+## Link Relations Used
+
+The following link relations are in use to connect composing profiles to their members:
+
+| Relation Type	| Specification Source	| Technical Function | 
+| ------------- | ----------------------| ------------------ |
+| rel="item"    | [RFC 6573 - item/collection relations][RFC 6573] | Declares that a profile is composed of (or includes) another profile, triggering the inference logic.
+| rel="type"    | [RFC 6903 - additional link types][RFC 6903] | (Optional) Explicitly types a resource as being a profile identifier, providing metadata about the role of the URI in the chain.
+
+
+See [IANA Link relations][IANA relreg]
+
+
 ## Inference Logic and Recursive Discovery
 
 ### The Inference Mechanism
@@ -128,6 +142,17 @@ Link: <https://www.rfc-editor.org/info/rfc6906>; rel=type,
 
 
 
+
+[RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
+[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
+[RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
+[RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
+[dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
+[ro-crate]:       https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
+[IANA relreg]:    https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
+[IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
+[OGCAPI]:         https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
+[CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
 
 
 [RT-P01]: ./01-profile-declaration.md "Profile Declaration"
