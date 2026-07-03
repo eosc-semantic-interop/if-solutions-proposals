@@ -192,7 +192,7 @@ First, the browser experience introduces the landing page as a substitute for th
 
 Secondly, the selected metadata model represented on these landing pages leads people to believe it is "the" (only) metadata to consider. The reality is very different. 
 
-We argue there really is a primary case for accessing a digital asset: to anyone's spontanous expectation it is about getting a copy of it. As in: "Go to the library, return with the book."
+We argue there really is a primary case for accessing a digital asset: to anyone's spontaneous expectation it is about getting a copy of it. As in: "Go to the library, return with the book."
 Next to that there is a limitless amount of secondary cases one could consider, each of them introducing the need for a different set (model) of associated information (metadata). The linkset pattern we introduce here precisely recalibrates for this two insights: dereferencing a doi should land on the content, the linkset allows to inform the consumer of the many available associated information models.  Each of these declared associated links could be annotated with content-types, profile-declarations and variant-menus (like in [RT-P01] and [RT-P03]) to help clients navigate and select the one they need.
 
 
