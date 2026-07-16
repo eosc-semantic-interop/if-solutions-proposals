@@ -18,6 +18,10 @@ Obviously, when profiles can be created as easily as web-pages, some post-creati
 
 To achieve this, the profile-composition pattern offers a clear strategy to infer interoperability declarations from encoded linkset relations between `<profile-uri>`s.
 
+## Relation to other patterns
+
+[RT-P02] depends upon [RT-P01] being in place. It actually supports a large scale deployment of it by providing a mechanism to compose profiles into larger sets, and infer conformity from that in a predictable way.
+
 
 ## Encoding
 
@@ -143,17 +147,10 @@ Link: <https://www.rfc-editor.org/info/rfc6906>; rel=type,
 
 
 
-[RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
-[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
-[RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
-[RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
-[dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
-[ro-crate]:       https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
-[IANA relreg]:    https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
-[IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
-[OGCAPI]:         https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
-[CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
 
 
-[RT-P01]: ./01-profile-declaration.md "Profile Declaration"
-[RT-P02]: ./02-profile-composition.md "Profile Composition"
+[RFC 6573]: https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
+[RFC 6903]: https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
+[IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
+[RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
+[RT-P02]: ./02-profile-composition.md                                         "Profile Composition"

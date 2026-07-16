@@ -146,15 +146,14 @@ Link: <https://semiceu.github.io/DCAT-AP/>; rel=profile
 
 
 
-[RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
-[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
-[dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
-[ro-crate]:       https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
-[IANA relreg]:    https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
-[IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
-[OGCAPI]:         https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
-[CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
 
 
 
-[RT-P01]: ./01-profile-declaration.md "Profile Declaration"
+[RFC 6903]: https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
+[RFC 6906]: https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
+[dx-prof]: https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
+[ro-crate]: https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
+[IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
+[OGCAPI]: https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
+[CDIF]: https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
+[RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"

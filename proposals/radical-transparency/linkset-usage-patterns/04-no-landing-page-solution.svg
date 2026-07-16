@@ -7,7 +7,7 @@
    viewBox="0 0 169.33333 127"
    version="1.1"
    id="svg982"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="04-no-landing-page-solution.svg"
    inkscape:export-filename="04-no-landing-page-solution.png"
    inkscape:export-xdpi="96"
@@ -28,19 +28,22 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1.6921098"
-     inkscape:cx="218.66193"
-     inkscape:cy="226.93563"
+     inkscape:cx="218.36644"
+     inkscape:cy="227.23112"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
-     inkscape:window-y="32"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid13378"
        spacingx="2.6458333"
-       spacingy="2.6458333" />
+       spacingy="2.6458333"
+       originx="0"
+       originy="0"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs979">
@@ -315,7 +318,12 @@
          style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#5e5c64;fill-opacity:1;stroke-width:0.264583"
          x="39.6875"
          y="55.5625"
-         id="tspan7619">«optional new role»</tspan></text>
+         id="tspan7619">«optional new role</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#5e5c64;fill-opacity:1;stroke-width:0.264583"
+         x="39.6875"
+         y="61.515625"
+         id="tspan1">for the landing page»</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-align:center;text-anchor:middle;fill:#5e5c64;stroke-width:0.264583"
