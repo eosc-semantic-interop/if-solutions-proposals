@@ -1,5 +1,9 @@
 #! /usr/bin/env bash
 
+num=${1:-??}
+num=$(printf "%02d" $num)
+mpat=${num}-*.md
+
 # get the script's location folder and move into it
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "$SCRIPT_DIR"
@@ -11,5 +15,5 @@ if [ -z $(which md-reflinks) ]; then
   echo -e "and if needed update those via rustup\n> rustup update"
   exit 1
 fi
-
-md-reflinks -f  master-links.md ??-*.md
+ 
+md-reflinks -f  master-links.md "$mpat"
