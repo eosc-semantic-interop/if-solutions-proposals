@@ -5,7 +5,7 @@
   * RT-P02: ✅ Profile Composition (focused on recursive inference; versioning moved to #09)
   * RT-P03: ✅ Conneg Menu Provisioning (includes the rel="self" identity anchor for redirects)
   * RT-P04: ✅ No-Landing-Page Solution
-  * RT-P05: Subsetting API Pattern
+  * RT-P05: ✅ Subsetting API Pattern
   * RT-P06: Host-wide Resource Discovery (New: Focused on mixing Linksets with Sitemaps/Signmaps)
   * RT-P07: Catalog Listings
   * RT-P08: Harvesting API
