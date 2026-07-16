@@ -1,5 +1,6 @@
 
 
+[RFC 1122]:       https://www.rfc-editor.org/info/rfc1122                             "RFC 1122 Requirements for Internet Hosts -- Communication Layers"
 [RFC 4287]:       https://www.rfc-editor.org/info/rfc4287                             "RFC 4287 The Atom Syndication Format"
 [RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
@@ -9,6 +10,7 @@
 [RFC 8574]:       https://www.rfc-editor.org/info/rfc8574                             "RFC 8574 cite-as link relation"
 [RFC 8631]:       https://www.rfc-editor.org/info/rfc8631                             "RFC 8631 link relations for webservices"
 [RFC 9264]:       https://www.rfc-editor.org/info/rfc9264                             "RFC 9264 Linksets"
+[RFC 9309]:       https://www.rfc-editor.org/info/rfc9309                             "RFC 9309 Robots Exclusion Protocol"
 [RFC 9727]:       https://www.rfc-editor.org/info/rfc9727                             "RFC 9727 api-catalog"
 
 [dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
@@ -17,6 +19,9 @@
 [IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
 [OGCAPI]:         https://docs.ogc.org/is/18-062r2/18-062r2.html                      "OGC API - Processes - Part 1: Core"
 [CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
+[signposting]:    https://signposting.org/                                            "Signposting the Scholarly Web"
+[signmaps]:       https://signposting.org/Signmap/                                    "An inventory technique for Signposting"
+[sitemapsi-org]:  https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
 [powder-dr]:      https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"
 
 
