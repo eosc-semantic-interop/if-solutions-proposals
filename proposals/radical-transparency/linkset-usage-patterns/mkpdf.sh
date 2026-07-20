@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 
 num=${1:-??}
-num=$(printf "%02d" $num)
+if [ "$num" != "??" ]; then
+  num=$(printf "%02d" $num)
+fi
 mpat=${num}-*.md
 
 # get the script's location folder and move into it

@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 
 num=${1:-??}
-num=$(printf "%02d" $num)
+if [ "$num" != "??" ]; then
+  num=$(printf "%02d" $num)
+fi
 mpat=${num}-*.md
 
 # get the script's location folder and move into it
@@ -16,4 +18,4 @@ if [ -z $(which md-reflinks) ]; then
   exit 1
 fi
  
-md-reflinks -f  master-links.md "$mpat"
+md-reflinks -f  master-links.md $mpat
