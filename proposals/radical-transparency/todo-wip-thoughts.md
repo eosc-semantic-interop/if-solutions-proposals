@@ -6,14 +6,13 @@
   * RT-P03: ✅ Conneg Menu Provisioning (includes the rel="self" identity anchor for redirects)
   * RT-P04: ✅ No-Landing-Page Solution
   * RT-P05: ✅ Subsetting API Pattern
-  * RT-P06: Host-wide Resource Discovery (New: Focused on mixing Linksets with Sitemaps/Signmaps)
-  * RT-P07: Catalog Listings
-  * RT-P08: Harvesting API
+  * RT-P06: ✅ Host-wide Resource Discovery (New: Focused on mixing Linksets with Sitemaps/Signmaps)
+  * RT-P07: Catalog Listings & Harvesting API
+  * RT-P08: Large Linkset Splits (Paging and OGC-style large map handling)
   * RT-P09: Version / Release Linking (Handling the timeline of both resources and profiles)
   * RT-P10: ✅ Offline (Detached) Copies (For filesystem/detached verification)
-  * RT-P11: Large Linkset Splits (Paging and OGC-style large map handling)
-  * RT-P12: API-UI & Aggregate Content Parts (Context of SPAs and JS-rendered content)
-  * RT-P13: Web Manifests
+  * RT-P11: API-UI & Aggregate Content Parts (Context of SPAs and JS-rendered content)
+  * RT-P12: Web Manifests
 * and some support docs
   * RT-D14: Mapping & RDF Uplifting (Guide on semantic equivalence across headers, HTML, and triples)
   * RT-D15: Profile Registry & Description Vision (Strategic vision for registries like cpurr)
