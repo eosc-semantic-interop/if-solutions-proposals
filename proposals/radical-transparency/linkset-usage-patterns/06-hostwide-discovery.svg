@@ -29,7 +29,7 @@
      showgrid="true"
      inkscape:zoom="2.3354167"
      inkscape:cx="320.07136"
-     inkscape:cy="240"
+     inkscape:cy="377.02052"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -75,17 +75,17 @@
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-align:center;text-anchor:middle;fill:#26a269;stroke-width:0.264583"
-       x="35.479801"
-       y="86.284966"
+       x="42.412476"
+       y="86.219276"
        id="text21"
        transform="rotate(0.09695921)"
        inkscape:transform-center-x="5.0760106"
        inkscape:transform-center-y="7.6625334"><tspan
          sodipodi:role="line"
          style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#26a269;fill-opacity:1;stroke-width:0.264583"
-         x="35.479801"
-         y="86.284966"
-         id="tspan21">2) Resources</tspan></text>
+         x="42.412476"
+         y="86.219276"
+         id="tspan21">2) sitemaps.org</tspan></text>
     <rect
        style="fill:#dc8add;fill-opacity:0.15;stroke:#613583;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
        id="rect1625"
@@ -190,20 +190,20 @@
          style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#1a5fb4;fill-opacity:1;stroke-width:0.264583"
          x="39.703617"
          y="54.473816"
-         id="tspan22">1) sitemaps.org</tspan></text>
+         id="tspan22">1) robots.txt</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-align:center;text-anchor:middle;fill:#613583;stroke-width:0.264583"
-       x="45.578171"
-       y="120.68069"
+       x="48.224003"
+       y="120.67621"
        id="text23"
        transform="rotate(0.09695921)"
        inkscape:transform-center-x="5.0760106"
        inkscape:transform-center-y="7.6625334"><tspan
          sodipodi:role="line"
          style="font-size:4.7625px;text-align:center;text-anchor:middle;fill:#613583;fill-opacity:1;stroke-width:0.264583"
-         x="45.578171"
-         y="120.68069"
+         x="48.224003"
+         y="120.67621"
          id="tspan23">3) Link-annotations</tspan></text>
     <text
        xml:space="preserve"
@@ -215,7 +215,7 @@
          style="font-size:4.7625px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
          x="112.98457"
          y="111.12499"
-         id="tspan24">&lt;...&gt;</tspan></text>
+         id="tspan24">&lt; … &gt;</tspan></text>
     <circle
        style="fill:#deddda;stroke:#5e5c64;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 0.264583"
        id="circle1"
@@ -441,7 +441,7 @@
          style="font-style:italic;font-size:4.7625px;text-align:center;text-anchor:middle;fill:#c061cb;fill-opacity:1;stroke-width:0.264583"
          x="31.92905"
          y="105.77945"
-         id="tspan40">&lt;xhtml:link</tspan><tspan
+         id="tspan40">&lt;rs:ln …</tspan><tspan
          sodipodi:role="line"
          style="font-style:italic;font-size:4.7625px;text-align:center;text-anchor:middle;fill:#c061cb;fill-opacity:1;stroke-width:0.264583"
          x="31.92905"
