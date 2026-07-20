@@ -5,6 +5,7 @@
 [RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
 [RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
+[RFC 7089]:       https://www.rfc-editor.org/info/rfc7089                             "HTTP Framework for Time-Based Access to Resource States -- Memento"
 [RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
 [RFC 8288]:       https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
 [RFC 8574]:       https://www.rfc-editor.org/info/rfc8574                             "RFC 8574 cite-as link relation"
@@ -21,9 +22,11 @@
 [CDIF]:           https://cross-domain-interoperability-framework.github.io/cdifbook/ "CDIF v1.1 Handbook"
 [signposting]:    https://signposting.org/                                            "Signposting the Scholarly Web"
 [signmaps]:       https://signposting.org/Signmap/                                    "An inventory technique for Signposting"
-[sitemapsi-org]:  https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
+[resourcesync]:   https://www.openarchives.org/rs/1.1/resourcesync                    "The ResourceSync Framework Specification"
+[rs-ln-xsd]:      https://www.openarchives.org/rs/1.1/resourcesync.xsd                "XML Schema for the resource-sync namespace"
+[xhtml-link-xsd]: https://www.w3.org/MarkUp/SCHEMA/xhtml-link-1.xsd                   "XML Schema for the attributes of xhtml:link"
+[sitemaps-org]:   https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
 [powder-dr]:      https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"
-
 
 [RT-P01]:         ./01-profile-declaration.md                                         "Profile Declaration"
 [RT-P02]:         ./02-profile-composition.md                                         "Profile Composition"
@@ -32,3 +35,5 @@
 [RT-P05]:         ./05-subsetting-api.md                                              "Subsetting API"
 [RT-P06]:         ./06-hostwide-discovery.md                                          "Hostwide Resource Discovery"
 [RT-P07]:         ./07-catalog-listings.md                                            "Catalog Listing"
+
+[RT-P10]:         ./10-detached-local-storage.md                                      "Detached local storage"
