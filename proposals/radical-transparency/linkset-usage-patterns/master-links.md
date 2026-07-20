@@ -34,6 +34,6 @@
 [RT-P04]:         ./04-no-landing-page-solution.md                                    "No Landing Page Solution" 
 [RT-P05]:         ./05-subsetting-api.md                                              "Subsetting API"
 [RT-P06]:         ./06-hostwide-discovery.md                                          "Hostwide Resource Discovery"
-[RT-P07]:         ./07-catalog-listings.md                                            "Catalog Listing"
+[RT-P07]:         ./07-catalog-assistance.md                                          "Catalog Listing to Assist Hostwide Discovery"
 
 [RT-P10]:         ./10-detached-local-storage.md                                      "Detached local storage"

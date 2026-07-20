@@ -41,9 +41,10 @@ This approach is not a theoretical proposal but a reflection of established web-
 For a formal reference on the base protocol, see [Sitemaps.org][sitemaps-org].
 
 For specific examples and documentation showing and advocating the `xhtml:link` mixin we refer to:
-* Google's gmail sitemap: [https://www.google.com/gmail/sitemap.xml]
-* Adobe's home sitemap: [https://www.adobe.com/home-sitemap.xml]
-* Google's developer docs: [https://developers.google.com/search/docs/specialty/international/localized-versions#example_2]
+
+* [Google's gmail sitemap](https://www.google.com/gmail/sitemap.xml)
+* [Adobe's home sitemap](https://www.adobe.com/home-sitemap.xml)
+* [Google's developer docs](https://developers.google.com/search/docs/specialty/international/localized-versions#example_2)
 
 The use of `xhtml:link` within a sitemap brings the web-linking model full circle. While RFC 8288 [RFC 8288][rfc8288] provides the formal model for externalizing links from the HTML payload into the HTTP header, it fundamentally encodes the same relationship logic originally introduced by HTML `<link>` tags. By using the xhtml namespace, we maintain a consistent serialization path: from HTML tags to XML-embedded links, all while adhering to the same semantic registry defined by IANA.
 
@@ -55,7 +56,7 @@ The alternative is using this namespace:
 xmlns:rs="http://www.openarchives.org/rs/terms/"
 ```
 
-This alternative follows the ResourceSync Framework Specification (ANSI/NISO Z39.99-2017) [resourcesync], which introduced the <rs:ln> element specifically to extend Sitemaps with the capacity to discover related resources, metadata, and bitstream fixity. By using a dedicated namespace (xmlns:rs="http://www.openarchives.org/rs/terms/"), this approach allows for a richer set of attributes (such as hash and modified) that are absent from the standard XHTML link model but essential for automated data synchronization.
+This alternative follows the ResourceSync Framework Specification (ANSI/NISO Z39.99-2017) [resourcesync], which introduced the <rs:ln> element specifically to extend Sitemaps with the capacity to discover related resources, metadata, and bitstream fixity. By using this dedicated `rs` namespace, this approach allows for a richer set of attributes (such as hash and modified) that are absent from the standard XHTML link model but essential for automated data synchronization.
 
 This exactly matches signposting's signmaps approach. [signmaps]
 
@@ -143,4 +144,4 @@ Instead of listing every alternative representation (JSON-LD, Turtle, HTML), the
 [RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
 [RT-P03]: ./03-content-negotiation-menu.md                                    "Content Negotiation Menu"
 [RT-P06]: ./06-hostwide-discovery.md                                          "Hostwide Resource Discovery"
-[RT-P07]: ./07-catalog-listings.md                                            "Catalog Listing"
+[RT-P07]: ./07-catalog-assistance.md                                          "Catalog Listing to Assist Hostwide Discovery"

@@ -50,10 +50,13 @@ When a client accesses a Conceptual URI (i.e. one supporting content-negotiation
 
 ```
 # from the <concept-uri>  anchor
-Link: <alternate-variant1-uri>; rel=alternate; type={mime1}; language={lang1}; profile={prof1},
-      <alternate-variant2-uri>; rel=alternate; type={mime2}; language={lang2}; profile={prof2},
+Link: <variant1-uri>
+        ; rel=alternate; type={mime1}; language={lang1}; profile={prof1},
+      <variant2-uri>
+        ; rel=alternate; type={mime2}; language={lang2}; profile={prof2},
       ...
-      <alternate-variantN-uri>; rel=alternate; type={mimeN}; language={langN}; profile={profN},
+      <variantN-uri>
+        ; rel=alternate; type={mimeN}; language={langN}; profile={profN},
 ```
 
 Note: The applied parameters for the effective negotiation (by mimetype, language or profile) are to be independently provided in the link-relation
@@ -79,8 +82,10 @@ In that case all uri playing a role in the pattern (i.e. the concept-resource, a
 
 ```
 # from any <uri> anchor in this pattern
-Link: <variant-menu-lsjson-uri>; rel=linkset; type="application/linkset+json", 
-      <variant-menu-lstext-uri>; rel=linkset; type="application/linkset", 
+Link: <variant-menu-lsjson-uri>
+        ; rel=linkset; type="application/linkset+json", 
+      <variant-menu-lstext-uri>
+        ; rel=linkset; type="application/linkset", 
 ```
 
 And additionally have it map out the relative roles and relations:
@@ -150,11 +155,11 @@ See [IANA Link relations][IANA relreg]
 
 In this scenario, a machine agent requests the identity resource for a specific marine observation.
 
-Conceptual URI: https://marineinfo.org/id/institute/36
-Target Variant: https://marineinfo.org/id/institute/36.html
-Target Variant: https://marineinfo.org/id/institute/36.ttl
-Target Variant: https://marineinfo.org/id/institute/36.jsonld
-Variant Menu:   https://marineinfo.org/id/institute/36-ls.json
+Conceptual URI: https://marineinfo.org/id/institute/36  
+Target Variant: https://marineinfo.org/id/institute/36.html  
+Target Variant: https://marineinfo.org/id/institute/36.ttl  
+Target Variant: https://marineinfo.org/id/institute/36.jsonld  
+Variant Menu:   https://marineinfo.org/id/institute/36-ls.json  
 
 ### Conneg Request for text/turtle
 
