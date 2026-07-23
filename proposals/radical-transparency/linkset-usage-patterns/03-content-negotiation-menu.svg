@@ -7,7 +7,7 @@
    viewBox="0 0 169.33333 127"
    version="1.1"
    id="svg982"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="03-content-negotiation-menu.svg"
    inkscape:export-filename="03-content-negotiation-menu.png"
    inkscape:export-xdpi="96"
@@ -27,20 +27,23 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="1.1902964"
-     inkscape:cx="241.95654"
-     inkscape:cy="255.39857"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:zoom="2.3805928"
+     inkscape:cx="347.81253"
+     inkscape:cy="207.30131"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
      inkscape:window-x="0"
-     inkscape:window-y="32"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid13378"
        spacingx="2.6458333"
-       spacingy="2.6458333" />
+       spacingy="2.6458333"
+       originx="0"
+       originy="0"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs979">
@@ -152,7 +155,7 @@
          id="tspan1627"
          style="font-size:4.7625px;fill:#613583;stroke:none;stroke-width:0.264583"
          x="8.6684628"
-         y="118.07419">Composition</tspan></text>
+         y="118.07419">Variant Menu</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';stroke-width:0.264583"
@@ -211,8 +214,8 @@
     <path
        id="path599"
        style="fill:none;stroke:#3d3846;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:0.529166, 0.264583;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 111.12499,26.458333 113.77083,31.75 m 5.29166,-2.645834 -5.29166,2.645834 m -52.916664,0 c -18.520833,-37.0416662 71.437484,-37.0416674 52.916664,0"
-       sodipodi:nodetypes="cccccc" />
+       d="m 111.125,29.104166 2.64583,5.291666 m 2.64583,-5.291666 -2.64583,5.291666 m -52.916665,2.645833 c 0,-31.7499985 8.598961,-18.520832 26.458333,-18.520832 17.859372,-1e-6 26.458332,-13.2291665 26.458332,15.874999"
+       sodipodi:nodetypes="cccccsc" />
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#5e5c64;stroke-width:0.264583;text-anchor:middle;text-align:center"

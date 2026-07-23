@@ -131,6 +131,19 @@ in `application/linkset` syntax:
 
 ```
 
+### Note on search index optimisation and rel=canonical
+
+A close relative to the `rel=self` relation is the `rel=canonical`, introduced in [RFC 6596][RFC 6596] to mark the "preffered URI" to use for a specific resource:
+
+> In regard to the link relation type, "canonical" can be described informally as the author's preferred version of a resource.  More formally, the canonical link relation specifies the preferred IRI from a set of resources that return the context IRI's content in duplicated form.  Once specified, applications such as search engines can focus processing on the canonical, and references to the context (referring) IRI can be updated to reference the target (canonical) IRI.
+
+The prime application domain targetted here has clearly been search-engines. Given the textual references and the list of cited implementations in [the appendix A of the rfc](https://www.rfc-editor.org/info/rfc6596/#appendix-A) this search-engine application-domain is likely even the sole trigger for this: avoiding some canabilisation of "search-index-ranking" caused by the avoidable competition introduced by variants of essentially the same content from the same source.
+
+It should be clear the chosen `rel=self` label in this pattern is distinct from this, targetting the 'identifier' role, the one resource that caters for content-negotiation, not simply the 'preferred' one. 
+
+Still, in cases where search-engine references is important for your resources, adding the `rel =canonical` to the pattern should surely be considered. In such cases it should typically be (i) either duplicating the resource marked as `rel=self` or (ii) aiming for the human-focus of search-engine use it to directly mark the human-oriented variant (typically the `type=text/hml`).
+
+
 ## Sketch
 
 ![conneg menu graph](./03-content-negotiation-menu.svg)  
@@ -146,6 +159,7 @@ The following link relations are in use to describe the links between a core con
 | rel="self"	| [RFC 4287 - Atom Syndication Format][RFC 4287] | Acts as the Identity Anchor at each negotiation endpoint; it links the specific variants back to the central conceptual URI to restore the "Broken Chain" after redirects
 | rel="alternate"	| [RFC 8288 - Web Linking][RFC 8288] | Signals the availability of alternative representation variants (such as Turtle, JSON-LD, or HTML) for the conceptual resource
 | rel="linkset"	| [RFC 9264 - Linkset][RFC 9264] | Refers to the external Variant Menu (the linkset) in which all available options and their interrelationships are summarized in a machine-readable format.
+| rel="canonical"	| [RFC 6596 - The Canonical Link Relation][RFC 6596] | Refers to the authors' «preferred» variant. The one that is typically returned by search-engines.
 
 
 See [IANA Link relations][IANA relreg]
@@ -237,6 +251,7 @@ Content-Type: application/linkset+json
 
 
 [RFC 4287]: https://www.rfc-editor.org/info/rfc4287                             "RFC 4287 The Atom Syndication Format"
+[RFC 6596]: https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 8288]: https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
 [RFC 9264]: https://www.rfc-editor.org/info/rfc9264                             "RFC 9264 Linksets"
 [IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
