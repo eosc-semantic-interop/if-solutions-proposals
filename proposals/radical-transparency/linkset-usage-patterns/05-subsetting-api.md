@@ -79,6 +79,15 @@ which in turn holds:
 }
 ```
 
+### Note on search index optimisation and rel=canonical
+
+As was the case with the previous pattern [RT-P03] a potential extra role can be played in this case by `rel=canonical` too.
+
+Just like was the case there, this relation allows, in the context of search-engines to defer, and accumulate matching hits, from subresources to the central aggregatting source. In practice this means each of the subresources (or fragments) would forefeit having deeplinks to themselves presented in seach-engine results in favor of linking back to the api-endpoint, or more likely given the human-oriented use of this search-engines its UI.
+
+It should be a careful consideration on the desired effect to actually apply this or not in any specific case.
+
+
 
 ## Sketch
 
