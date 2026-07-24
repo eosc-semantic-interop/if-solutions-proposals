@@ -229,7 +229,7 @@ Content-type: application/linkset+json
 {
   "linkset": [
     {
-      "anchor": "https://marinespecies.org/.well-know/api-catalog
+      "anchor": "https://marinespecies.org/.well-know/api-catalog",
       "item": [
         {"href": "https://marinespecies.org/rest/"} 
       ],
