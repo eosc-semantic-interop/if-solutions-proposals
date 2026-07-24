@@ -79,10 +79,11 @@ In general, through the use of external xml namespace, these additions to the `s
 
 ### Strategic focus to the minimal 
 
-While the Sitemap protocol allows for a wide range of XML injections, Radical Transparency recommends a minimal approach for host-wide discovery. To keep sitemaps "lean and mean," providers SHOULD limit annotations to two primary link relations:
+While the Sitemap protocol allows for a wide range of XML injections, Radical Transparency recommends a minimal approach for host-wide discovery. To keep sitemaps "lean and mean," providers SHOULD limit annotations to these primary link relations:
 
 1. `rel=profile`: To allow harvesters to immediately identify the type and conformity of a resource.
 2. `rel=linkset`: To provide the navigation map that documents all other semantic connections of the resource.  (e.g. content negotiation menus from RT-P03 or provenance chains from RT-P05)
+3. `rel=api-catalog`: This is actually a special case of the above as api-catalogs are essentially linksets.
 
 To be clear: we see no absolute value to move or copy all the resource level details captured in the linksets into the sitemap. By offloading granular interaction details to dedicated linkset files ([RFC 9264][RFC 9264]), we ensure that the sitemap remains a high-performance index rather than a bloated metadata store. It should be equally clear that the application of this pattern in any way excludes the encoding of more information relations into the signmaps, even if that is duplicating existing linksets. Depending on how certain service deployments are setup and consumed, the balancing act of providing more information in less requests becomes an optimisation task. The kind of engineering that is not affecting nor constraind by the conceptual model. 
 
