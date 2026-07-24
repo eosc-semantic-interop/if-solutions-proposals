@@ -3,6 +3,7 @@
 [RFC 1122]:       https://www.rfc-editor.org/info/rfc1122                             "RFC 1122 Requirements for Internet Hosts -- Communication Layers"
 [RFC 4287]:       https://www.rfc-editor.org/info/rfc4287                             "RFC 4287 The Atom Syndication Format"
 [RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
+[RFC 6596]:       https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
 [RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
 [RFC 7089]:       https://www.rfc-editor.org/info/rfc7089                             "HTTP Framework for Time-Based Access to Resource States -- Memento"
@@ -28,6 +29,7 @@
 [sitemaps-org]:   https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
 [powder-dr]:      https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"
 
+[RT-intro]:       ./00-linkset-patterns.md                                            "Linkset Patterns Overview"
 [RT-P01]:         ./01-profile-declaration.md                                         "Profile Declaration"
 [RT-P02]:         ./02-profile-composition.md                                         "Profile Composition"
 [RT-P03]:         ./03-content-negotiation-menu.md                                    "Content Negotiation Menu" 
@@ -35,5 +37,7 @@
 [RT-P05]:         ./05-subsetting-api.md                                              "Subsetting API"
 [RT-P06]:         ./06-hostwide-discovery.md                                          "Hostwide Resource Discovery"
 [RT-P07]:         ./07-catalog-assistance.md                                          "Catalog Listing to Assist Hostwide Discovery"
-
+[RT-P08]:         ./08-large-linksets.md                                              "Large Linksets"
+[RT-P09]:         ./09-release-links.md                                               "Linking versions and releases" 
 [RT-P10]:         ./10-detached-local-storage.md                                      "Detached local storage"
+[RT-P11]:         ./11-ui-data-parts.md                                               "Linking data parts for UI One Pagers"
