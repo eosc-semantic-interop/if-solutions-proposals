@@ -27,11 +27,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="1.1965023"
-     inkscape:cx="125.36541"
-     inkscape:cy="223.56831"
+     inkscape:zoom="1.7015625"
+     inkscape:cx="319.70615"
+     inkscape:cy="240.07346"
      inkscape:window-width="1920"
-     inkscape:window-height="1163"
+     inkscape:window-height="1131"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -64,12 +64,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#dc8add;fill-opacity:0.15;stroke:#613583;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
+       style="fill:#dc8add;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
        id="rect1625"
        width="144.99165"
        height="58.208336"
        x="13.49375"
-       y="60.85416"
+       y="60.316612"
        rx="7.9374948"
        ry="7.9374995" />
     <path
@@ -78,7 +78,7 @@
        d="m 31.749999,71.437497 -5.291666,-2.645833 m 5.291666,-2.645833 -5.291666,2.645833 M 39.687499,50.270831 c 0,18.520833 0,18.520833 -13.229166,18.520833"
        sodipodi:nodetypes="cccccc" />
     <rect
-       style="fill:#8ff0a4;fill-opacity:0.15;stroke:#26a269;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
+       style="fill:#8ff0a4;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
        id="rect3"
        width="71.437508"
        height="44.714581"
@@ -87,7 +87,7 @@
        rx="7.9374976"
        ry="7.9375005" />
     <rect
-       style="fill:#99c1f1;fill-opacity:0.15;stroke:#1a5fb4;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
+       style="fill:#99c1f1;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
        id="rect1013"
        width="65.881248"
        height="44.748306"

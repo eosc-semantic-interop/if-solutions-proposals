@@ -27,11 +27,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2.3354167"
-     inkscape:cx="250.70472"
-     inkscape:cy="231.8644"
-     inkscape:window-width="2560"
-     inkscape:window-height="1371"
+     inkscape:zoom="1.8354167"
+     inkscape:cx="319.81839"
+     inkscape:cy="240"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -64,7 +64,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#8ff0a4;fill-opacity:0.15;stroke:#26a269;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
+       style="fill:#8ff0a4;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
        id="rect3"
        width="145.52081"
        height="29.104164"
@@ -87,7 +87,7 @@
          y="86.219276"
          id="tspan21">2) sitemaps.org</tspan></text>
     <rect
-       style="fill:#dc8add;fill-opacity:0.15;stroke:#613583;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
+       style="fill:#dc8add;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.58749;stroke-dashoffset:0"
        id="rect1625"
        width="145.52083"
        height="31.485415"
@@ -96,7 +96,7 @@
        rx="7.9374943"
        ry="7.937499" />
     <rect
-       style="fill:#99c1f1;fill-opacity:0.15;stroke:#1a5fb4;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
+       style="fill:#99c1f1;fill-opacity:0.15;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0"
        id="rect1013"
        width="145.52083"
        height="34.395828"

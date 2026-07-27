@@ -7,7 +7,7 @@
    viewBox="0 0 169.33333 127"
    version="1.1"
    id="svg982"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="01-profile-declaration.svg"
    inkscape:export-filename="01-profile-declaration.png"
    inkscape:export-xdpi="96"
@@ -28,19 +28,22 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1.1902964"
-     inkscape:cx="250.77788"
-     inkscape:cy="238.59604"
+     inkscape:cx="250.77787"
+     inkscape:cy="239.0161"
      inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:window-height="1131"
      inkscape:window-x="0"
-     inkscape:window-y="32"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid13378"
        spacingx="2.6458333"
-       spacingy="2.6458333" />
+       spacingy="2.6458333"
+       originx="0"
+       originy="0"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs979">
@@ -61,7 +64,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#8ff0a4;stroke:#26a269;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
+       style="fill:#8ff0a4;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
        id="rect1631"
        width="163.77708"
        height="37.041672"
@@ -70,7 +73,7 @@
        rx="7.9374971"
        ry="7.9375005" />
     <rect
-       style="fill:#dc8add;stroke:#613583;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
+       style="fill:#dc8add;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
        id="rect1625"
        width="163.77708"
        height="37.04166"
@@ -79,7 +82,7 @@
        rx="7.9374971"
        ry="7.9375005" />
     <rect
-       style="fill:#99c1f1;stroke:#1a5fb4;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
+       style="fill:#99c1f1;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 1.5875;stroke-dashoffset:0;fill-opacity:0.15000001"
        id="rect1013"
        width="163.77708"
        height="37.041668"
