@@ -6,7 +6,7 @@
 
 ## Goal
 
-The objective of this pattern is to delegate the granular exposure and discovery of digital assets to specialized catalogs, registers, or stream-based interfaces (such as DCAT, OGC API - Records, Subsetting API services, or dedicated harvesting services). By marking these catalogs as authoritative entry points within the host-wide discovery layer (RT-P06), providers can ensure that machine agents find the most efficient path to harvest or search large-scale collections without overwhelming static sitemaps.
+The objective of this pattern is to delegate the granular exposure and discovery of digital assets to specialized catalogs, registers, or stream-based interfaces (such as DCAT, OGC API - Records, Subsetting API services, or dedicated harvesting services). By marking these catalogs as authoritative entry points within the host-wide discovery layer ([RT-P06]), providers can ensure that machine agents find the most efficient path to harvest or search large-scale collections without overwhelming static sitemaps.
 
 ## Motivation
 
@@ -17,42 +17,41 @@ The pattern for host-wide discovery [(RT-P06)][RT-P06] offer a simple and straig
 * Bot Efficiency: Specialized catalogs provide richer metadata "hints" (profiles) that allow bots to skip irrelevant sub-collections early in the discovery process.
 * The Balancing Act: This pattern allows architects to choose the "optimal bucket" for their data. If a domain lacks a Subsetting API (RT-P05), it may keep more detail in the sitemap. Conversely, the presence of a robust API-Catalog (RFC 9727) allows the sitemap to remain "lean and mean" by simply pointing to the catalog's root.
 
+### The digital ecosystem hierarchy
 
---todo: expand into prose
+Modern data providers do not serve a flat list of files; they manage a complex hierarchy of digital assets. To navigate this effectively, machine agents must distinguish between various resource roles:
 
-* make a point about both "types" of resources as well as possible hierachy of "resources" to be visited by a mix of indexing webcrawlers and dedicated harvesting tools
-  * types:
-    * static content - possibly in conneg (RT-PO4) setup 
-    * one page UI frontends to API
-    * API endpoints & catalog endpoints 
-    * datasets &  catalog dumps
-    * api-detail pages & catalog-entry-detail pages (both with possible conneg setup)
-    * subsets & fragments
-  * optimised harvesting API:
-  * sitemap-index hierarchy: 
-* match that to sitemap-index hierachy
+* **Entry Points**: Static landing pages or single-page application (SPA) frontends that serve human users.
+* **Service Gateways**: API endpoints and catalog roots (e.g., OGC Records, STAC) that act as authoritative brokers for sub-collections.
+* **Aggregated Assets**: Datasets and catalog dumps provided as bulk downloads for initial harvesting.
+* **Granular Resources**: Individual records, metadata files ([RT-P04]), and dynamic data fragments ([RT-P05]).
 
-
+To prevent crawlers from getting lost in this hierarchy, [RT-P07] utilizes the Sitemap Index hierarchy. Instead of a single massive file, providers use a sitemap-index.xml to delegate specific sub-domains of the host to dedicated sitemaps that can both list and serve as alternatives to catalogs or dedicated APIs. In combination with conformity declarations through [RT-P01] this structural "hand-over" ensures that a general web-bot finds the gateway, while a specialized harvester (like an LDES client) follows the rel="profile" link to initiate deep harvesting.
 
 
 ## Relation to other patterns
 
---todo: expand into prose
+[RT-P07] does not exist in isolation; it functions as the structural glue between host-wide discovery and granular interaction:
 
-* extends on [RT-P06] and offers a strategy to optimise the balance between genereal web-crawling and tuned harvesting API's
-* relies on [RT-P01] to recognise certain catalogues by their profile
-* connects to [RT-P05] in case the catalog wants to present itself also as a subsetting API
+* [RT-P06] Integration: It extends the host-wide discovery by specializing the sitemap entries. While P06 says "I have resources," P07 says "For these specific resources, consider using this specialist API."
+* [RT-P01] Dependency: A machine agent relies on the `rel=profile` declaration within the sitemap to recognize that a URI is not just a page, but a catalog adhering to a known standard (like DCAT or OGC).
+* [RT-P05] Connection: When a catalog exposes dynamic subsetting capabilities, it functions as a Subsetting API. RT-P07 provides the link to the service base, which in turn provides the `rel=collection` anchors for individual fragments.
 
+
+Also, this approach alligns with the recommendations of the [ODIS Book](https://book.odis.org/gettingStarted.html#creating-a-sitemap) and taps into actual sitemap generation support that is already implemented in some subsetting-API systems.
 
 
 ## Encoding 
 
-This pattern implements the "hand-over" from the general sitemap to the specialized catalog using the ResourceSync/Signmap extension elements (`rs:ln`):
-* Entry Point: The <loc> element in the sitemap points to the root URI of the catalog or the /.well-known/api-catalog.
-* Relation Type rel="api-catalog": Mandated by RFC 9727 to signal that the target is a formal list of available APIs or services.
-* Profile Declaration: A rel="profile" link MUST be present to inform the agent of the catalog's type (e.g., OGC Records, DCAT-AP, or LDES), enabling the agent to calibrate its harvesting strategy.
+This pattern implements the "hand-over" from the general sitemap to the specialized catalog using the ResourceSync/Signmap extension elements (`rs:ln`). 
 
--- todo: provide encoding rules -- basically listing catalogs, preferably in a separate sitemap-index, relation to api-catalog?
+To do this, it introduces a sitemap-hierarchy that allows to mimic the 'collection' or 'containment' relation API-endpoints have to detailed resources they produce. This allows to treat these sitemaps as 'alternative' representations for those API-endpoints.  Applied to itself this approach suggests the well-known api-catalog itself, which is expected to list all local API-endpoints should also receive such sitemap.xml counterpart to be placed in the hierarchy.
+
+To implement catalog-assisted exposure, providers MUST follow these rules:
+* Bootstrap: provide a root sitemap-index conform to [sitemaps-org] 
+* Catalog-of-Catalogs: an [RFC 9727] compatible `api-catalog` MUST be provided, and listed in the sitemap hierarchy, additionally its content SHOULD be reflected in a dedicated sitemap.xml alternate, which should also be referenced in the sitemap-hierarchy. The `<rs:nl>` should be uses to mark this resource with the `rel=api-catalog`
+* Catalog Registration: Every authoritative catalog on the system SHOULD be listed in the above `api-catalog`, and CAN provide itself an alternate in sitemap.xml format.
+* Mandatory Profiling: To enable machine-actionability, each entry SHOULD declare its conformity via `rel=profile` relations. In the various sitemap.xml these SHOULD be encoded through `<rs:ln>` elements.
 
 
 ## Sketch
@@ -198,6 +197,8 @@ For the link relation:
 $ curl -LI --url "https://marineinfo.org/ldes/dataset"
 
 HTTP/1.1 200 OK
+Link: <./dataset-feed.ls.json>    # e.g. for RT-P03 conneg menu and RT-P05 subsetting api
+      ; rel=linkset
 Link: </.well-known/api-catalog>
       ; rel=api-catalog
 Link: </sitemaps/dataset-sitemap.xml>
@@ -210,10 +211,18 @@ For the sitemap alternative:
 ```xml
 <!-- https://marineinfo.org/sitemaps/dataset-sitemap.xml -->
 <urlset>
-  <url><loc>https://marineinfo.org/id/dataset/1</loc></url>
-  <url><loc>https://marineinfo.org/id/dataset/2</loc></url>
-  <url><loc>https://marineinfo.org/id/dataset/3</loc></url>
-  <url><loc>https://marineinfo.org/id/dataset/5</loc></url>
+  <url>
+    <loc>https://marineinfo.org/id/dataset/1</loc>
+    <!-- RT-P03 conneg menu -->
+    <rs:ln rel="linkset"  
+           href="https://marineinfo.org/id/dataset/1.ls.json" >
+    <!-- RT-P01 conformity declaration to semic's DCAT-AP -->
+    <rs:ln rel="profile"  
+           href="http://data.europa.eu/r5r/">
+    <!-- strict rdfs:type like typing -->
+    <rs:ln rel="type"  
+           href="http://www.w3.org/ns/dcat#Dataset" >
+  </url>
   <url>
     ... <!-- Repeated similarly for other instances of this type ... -->
   </url>
@@ -226,8 +235,10 @@ For the sitemap alternative:
 [RFC 6596]: https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 6906]: https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
 [RFC 9727]: https://www.rfc-editor.org/info/rfc9727                             "RFC 9727 api-catalog"
+[sitemaps-org]: https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
 [RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
 [RT-P03]: ./03-content-negotiation-menu.md                                    "Content Negotiation Menu"
+[RT-P04]: ./04-no-landing-page-solution.md                                    "No Landing Page Solution"
 [RT-P05]: ./05-subsetting-api.md                                              "Subsetting API"
 [RT-P06]: ./06-hostwide-discovery.md                                          "Hostwide Resource Discovery"
 [RT-P07]: ./07-catalog-assistance.md                                          "Catalog Listing to Assist Hostwide Discovery"
