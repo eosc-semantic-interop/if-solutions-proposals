@@ -53,6 +53,19 @@ To implement catalog-assisted exposure, providers MUST follow these rules:
 * Catalog Registration: Every authoritative catalog on the system SHOULD be listed in the above `api-catalog`, and CAN provide itself an alternate in sitemap.xml format.
 * Mandatory Profiling: To enable machine-actionability, each entry SHOULD declare its conformity via `rel=profile` relations. In the various sitemap.xml these SHOULD be encoded through `<rs:ln>` elements.
 
+### Design Considerations: The Balancing Act of Exposure
+
+The boundary between host-wide sitemaps ([RT-P06]) and catalog-assisted exposure ([RT-P07]) is not a fixed architectural mandate but a strategic choice based on local service optimization. While specialized catalogs are superior for handling millions of dynamic records, sitemaps remain the "Maximum Boredom" path for general web-bots. 
+
+When designing an exposure strategy, providers should consider the following: 
+
+* Sitemaps as API Alternates: Following the logic of `rel=alternate`, a sitemap hierarchy can be viewed as a static, crawlable alternative to a searchable WebService API . This allows providers to support low-barrier harvesting for standard bots while reserving the API for complex, query-driven interactions.
+
+* Crawl Optimization and Protection: To ensure service stability, architects may choose to expose all granular resources in a sitemap hierarchy while simultaneously applying Disallow directives in the `robots.txt` for the corresponding API endpoints (e.g., `Disallow: /api/v1/records/**`). This guides automated agents toward the pre-calculated sitemap index and away from resource-intensive search interfaces.
+
+* Redundancy at the Meta-Level: Listing API gateways in both a sitemap and an [RFC 9727 api-catalog][RCFC 9727] is a deliberate choice of "Explorability" over exclusivity. The sitemap ensures the service is discoverable by general-purpose web crawlers, while the api-catalog provides a dedicated registry for agents specifically seeking technical contracts (OpenAPI) and service status.
+
+* Delegation of Responsibility: The primary goal of [RT-P07] is to enable a "hand-over." Providers must decide if, and at what level of the hierarchy a general-purpose crawler should stop following sitemap links and start utilizing a specialized harvester (such as an LDES client or STAC crawler) based on the declared `rel=profile`.
 
 ## Sketch
 
