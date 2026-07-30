@@ -22,7 +22,7 @@ While [RFC 9264 linksets][RFC 9264] solve the "bloated HTTP header" problem, the
 
 This is a simple and stand-alone "architectural housekeeping" pattern. A direct application in fact of [RFC 6573], in particular to linksets [RFC 9264] themselves.
 
-As such it simply serves as a reminder of a built-in engineering optimisation that might very well get handy, precisely when eagerly adopting 'all these patterns' and its underlying Radical Transparency idea.
+As such it simply serves as a reminder of a built-in engineering optimisation that might very well come in handy, precisely when eagerly adopting 'all these patterns' and its underlying Radical Transparency idea.
 
 ## Encoding 
 
@@ -57,9 +57,59 @@ While [RFC 8288] is open to any key/value target attributes, it is limiting in i
  | rel="collection"  | [RFC 6573]    | Points back from a fragment to its parent/master linkset to provide context. |
 
 
-## Implementation Example
+## Implementation Example: Pattern Weaving & Functional Split-up
 
-We leave this trivial example as an inviting exercise to the reader.
+To demonstrate [RT-P08], we revisit some of the MarineInfo.org resources we mentioned in earlier patterns. As a provider adopts multiple Radical Transparency patterns, the number of link relations for a single resource grows: it needs to declare Conformity Profiles ([RT-P01]), expose a Content Negotiation Menu ([RT-P03]), and provide context for Subsetting APIs ([RT-P05]).
+Instead of serving one monolithic linkset, MarineInfo uses a Master Linkset to delegate discovery based on functional roles. This ensures that a harvester interested only in "provenance" doesn't have to parse the entire "variants menu."
+
+1. The Master Linkset (institute-36.ls.json) The master linkset acts as the "Identity Anchor." It contains the bootstrap links and delegates the rest to specialized child linksets using `rel="item"`.
+
+```json
+{
+  "linkset": [
+    {
+      "anchor": "https://marineinfo.org/id/institute/36",
+      "item": [
+        { 
+          "href": "https://marineinfo.org/id/institute/36/profiles.ls.json", 
+          "type": "application/linkset+json",
+          "title": "Conformity & Profile Declarations (RT-P01/P02)"
+        },
+        { 
+          "href": "https://marineinfo.org/id/institute/36/variants.ls.json", 
+          "type": "application/linkset+json",
+          "title": "Content Negotiation Menu (RT-P03)"
+        },
+        { 
+          "href": "https://marineinfo.org/id/institute/36/services.ls.json", 
+          "type": "application/linkset+json",
+          "title": "API & Subsetting Context (RT-P05/P07)"
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+2. Specialized Child Linkset (Example: `profiles.ls.json`) This fragment focuses exclusively on the "What is this?" question, containing the relations from [RT-P01] and [RT-P02].
+
+```json
+{
+  "linkset": [
+    {
+      "anchor": "https://marineinfo.org/id/institute/36",
+      "collection": { "href": "https://marineinfo.org/id/institute/36.ls.json" },
+      "profile": [
+        { "href": "https://marineinfo.org/profiles/institute" },
+        { "href": "https://schema.org/Organization" }
+      ]
+    }
+  ]
+}
+```
+
+
 
 
 
