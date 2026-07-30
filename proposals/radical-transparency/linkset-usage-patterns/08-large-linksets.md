@@ -92,7 +92,10 @@ Instead of serving one monolithic linkset, MarineInfo uses a Master Linkset to d
 ```
 
 
-2. Specialized Child Linkset (Example: `profiles.ls.json`) This fragment focuses exclusively on the "What is this?" question, containing the relations from [RT-P01] and [RT-P02].
+2. Specialized Child Linksets 
+
+
+Example: `profiles.ls.json` -- This fragment focuses exclusively on the "What is this?" question, containing the relations from [RT-P01] and [RT-P02].
 
 ```json
 {
@@ -109,8 +112,41 @@ Instead of serving one monolithic linkset, MarineInfo uses a Master Linkset to d
 }
 ```
 
+Example: `variants.ls.json` -- This fragment focuses on 'which variants do exist' as suggested in [RT-P03]
 
+```json
+{
+  "linkset": [
+    {
+      "anchor": "https://marineinfo.org/id/institute/36",
+      "collection": [
+        { "href": "https://marineinfo.org/id/institute/36.ls.json", "type": "application/linkset+json" }
+      ],
+      "self": [
+        { "href": "https://marineinfo.org/id/institute/36" }
+      ],
+      "alternate": [
+        { 
+          "href": "https://marineinfo.org/id/institute/36.ttl", 
+          "type": "text/turtle",
+          "profile": "https://marineinfo.org/ns/profile#default" 
+        },
+        { 
+          "href": "https://marineinfo.org/id/institute/36.jsonld", 
+          "type": "application/ld+json",
+          "profile": "https://marineinfo.org/ns/profile#default" 
+        },
+        { 
+          "href": "https://marineinfo.org/id/institute/36.html", 
+          "type": "text/html" 
+        }
+      ]
+    }
+  ]
+}
+```
 
+We do realise this example does not really match the 'large' classifier, we only aim to show in principle how to go about applying it.
 
 
 
