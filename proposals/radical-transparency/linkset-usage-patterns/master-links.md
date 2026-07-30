@@ -6,7 +6,7 @@
 [RFC 6596]:       https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
 [RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
-[RFC 7089]:       https://www.rfc-editor.org/info/rfc7089                             "HTTP Framework for Time-Based Access to Resource States -- Memento"
+[RFC 7089]:       https://www.rfc-editor.org/info/rfc7089                             "RFC 7089 HTTP Framework for Time-Based Access to Resource States -- Memento"
 [RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
 [RFC 8288]:       https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
 [RFC 8574]:       https://www.rfc-editor.org/info/rfc8574                             "RFC 8574 cite-as link relation"
