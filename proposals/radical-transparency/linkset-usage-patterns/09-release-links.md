@@ -23,7 +23,7 @@ In a dynamic data ecosystem, resources are continuously updated, but stability i
 Being a pattern that is applicable to any digital asset, it lends itself logically to so called "pattern weaving", combinations of patterns applied simultanuously to some resources.
 Specifically we want to mention:
 * That subsetting APIs [RT-P05] are often versioned, and note that the datasets they rely on will evolve according to their own lifecycle. Each version of the one can simply link to the matching version of the other (through `rel=cite-as`). Following the chain of dependency, this will typically call for a new (dot) release of the API when it decides to switch to a new version of the backing dataset.
-* That versioning of profiles should consider applying the `rel=http://schema.org/hasPart` link from [RT-P02] to allow infering generic profile assumptions down to so specific releases.
+* That versioning of profiles should consider applying the `rel=http://schema.org/hasPart` link from [RT-P02] to allow inferring generic profile assumptions down to such specific releases.
 
 
 ## Encoding 
@@ -83,8 +83,8 @@ Release Linkset (dataset-90-v2.1.ls.json):
 ```
 
 Note that there are multiple competing formats out there to describe the 'history' (ie. the list of all known versions). This pattern does not inforce the use of any of these. 
-However, conform the rest of this pattern work we do:
-* suggests to provide a profile conformity declaratuion ([RT-P01]) to guide consumers into how to parse the information
+However, conforming to the rest of this pattern work, we do:
+* suggests to provide a profile conformity declaration ([RT-P01]) to guide consumers into how to parse the information
 * just apply a simple linkset extension (adding keyword `version`) to complete this example
 
 
@@ -109,7 +109,8 @@ History Linkset (dataset/90/history)
           "title": "updated release containing major change abc..." 
         }, {
           "href": "https://marineinfo.org/id/dataset/90/v2.1",
-          "version": "2.1",          "release-date": "2026-08-26",
+          "version": "2.1",
+          "release-date": "2026-08-26",
           "title": "updated release containing xyz..." 
         }
       ]
@@ -119,4 +120,8 @@ History Linkset (dataset/90/history)
 ``` 
 
 
-[RT-P07]: ./07-catalog-assistance.md                                          "Catalog Listing to Assist Hostwide Discovery"
+[RFC 5829]: https://www.rfc-editor.org/info/rfc5829                             "RFC 5829 Link Relation Types for Simple Version Navigation between Web Resources"
+[RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
+[RT-P02]: ./02-profile-composition.md                                         "Profile Composition"
+[RT-P05]: ./05-subsetting-api.md                                              "Subsetting API"
+[RT-P09]: ./09-release-links.md                                               "Linking versions and releases"

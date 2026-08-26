@@ -150,4 +150,11 @@ We do realise this example does not really match the 'large' classifier, we only
 
 
 
+[RFC 6573]: https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
+[RFC 8288]: https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
+[RFC 9264]: https://www.rfc-editor.org/info/rfc9264                             "RFC 9264 Linksets"
+[RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
+[RT-P02]: ./02-profile-composition.md                                         "Profile Composition"
+[RT-P03]: ./03-content-negotiation-menu.md                                    "Content Negotiation Menu"
+[RT-P05]: ./05-subsetting-api.md                                              "Subsetting API"
 [RT-P08]: ./08-large-linksets.md                                              "Large Linksets"

@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2.4229167"
-     inkscape:cx="320.06879"
-     inkscape:cy="240"
+     inkscape:zoom="2.1703125"
+     inkscape:cx="320"
+     inkscape:cy="239.82721"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -180,7 +180,7 @@
          id="tspan1627"
          style="font-size:4.7625px;fill:#613583;stroke:none;stroke-width:0.264583"
          x="8.6684618"
-         y="118.07419">Composition</tspan></text>
+         y="118.07419">Decomposition</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#26a269;stroke-width:0.264583"
@@ -201,7 +201,7 @@
          style="font-size:4.7625px;fill:#26a269;stroke:none;stroke-width:0.264583"
          x="126.67908"
          y="118.5447"
-         id="tspan4126">declarations</tspan></text>
+         id="tspan4126">statements</tspan></text>
     <circle
        style="fill:#dc8add;stroke:#5e5c64;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 0.264583"
        id="circle1637"
@@ -267,7 +267,7 @@
          id="tspan1621"
          style="font-size:4.7625px;fill:#1a5fb4;stroke:none;stroke-width:0.264583"
          x="10.481013"
-         y="37.84679">Main profile declaration</tspan></text>
+         y="37.84679">Main linkset declaration</tspan></text>
     <circle
        style="fill:#dc8add;stroke:#5e5c64;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.529167, 0.264583"
        id="circle4128"
