@@ -38,6 +38,12 @@ This linkset usage pattern proposes that the various link-targets (from the PID 
 This allows to still provide human-readable interfaces, but repositioned to (just) one of many available descriptions (Option A). Having them at all gets demoted from requirement to questionable option as the affordances they hold can be generated on-the-fly by browser-plugins (Option B).
 
 
+## Relations to other patterns
+
+There is possible confusion or overlap with [RT-P03]. This comes from the fact that from a conceptual view-point there is only real world actual thing (the digital core asset) unambiguously referenced to with one persistent identifier (its <resource-pid-uri>). From this viewpoint one might consider meta-data records for that thing to be delivered through content-negotiation on the same resource. In this case a `rel=alternate` approach from [RT-PO3] offers a natural match, as the `rel=describedby` guidance is never needed to grab that information.
+
+In most practical cases though, the persistent identifier used in citations is resolved by external services that simply provide a redirect. These are distinct from some primary catalogue services publishing distinct metadata-resources describing them; in turn often distinct from the archives that offer downloadable resources for the actual core content. In these cases the extra `rel=describedby` and `rel=describes` from this pattern [RT-P04] come into view. Weaving in pattern [RT-P03] for different variants of any these resources keeps the roles clear and obvious.
+
 ## Encoding 
 
 In this approach, a specific representation of the core content being identified is designated to function as the primary resolution (i.e. where one "lands") for both human and machine agents.
@@ -66,7 +72,7 @@ Link: <html-description-uri>; rel=describedby; type: text/html
 
 ```
 # from this <html-description-uri> as anchor
-Link: <resource-pid-uri>; rel=describes
+Link: <core-content-uri>; rel=describes
 ```
 
 This should be seen as an optional server-provided human-oriented view that describes and offers essential navigation and features concerning the actual identified resource.
@@ -88,7 +94,7 @@ Link: <ma-description-uri>; rel=describedby; type: application/ld+json
 
 ```
 # from this <ma-description-uri> as anchor
-Link: <resource-pid-uri>; rel=describes
+Link: <core-content-uri>; rel=describes
 ```
 
 
@@ -143,7 +149,7 @@ Note how this also blends in the usage of [RT-P03]
 { "linkset":
   [
     { "anchor"       : "https://marineinfo.org/id/dataset/1447",
-      "describes"    : [ {"href": "https://doi.org/10.14284/170" }],
+      "describes"    : [ {"href": "https://marine-data-archive.org/data/39475-02348590-2234.csv" }],
       "alternate"    : [
         {"href"        : "https://marineinfo.org/id/institute/1447.ttl",
          "type"        : "text/turtle; charset=utf-8"
@@ -156,8 +162,9 @@ Note how this also blends in the usage of [RT-P03]
         }
       ]
     },
-    { "anchor"       : "https://doi.org/10.14284/170",
+    { "anchor"       : "https://marine-data-archive.org/data/39475-02348590-2234.csv",
       "describedby"  : [ {"href": "https://marineinfo.org/id/dataset/1447"} ]
+      "cite-as"      : [ {"href": "https://doi.org/10.14284/170"} ]
     }, 
     { "anchor"       : "https://marineinfo.org/id/institute/1447.ttl",
       "self"         : [ {"href": "https://marineinfo.org/id/institute/1447"} ]
