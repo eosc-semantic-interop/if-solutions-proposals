@@ -1,10 +1,11 @@
 #! /usr/bin/env bash
 
 num=${1:-??}
-if [ "$num" != "??" ]; then
-  num=$(printf "%02d" $num)
+if [ "$num" == "??" ]; then
+  mpat="??-*.md"
+else
+  mpat=$(printf '%02d-*.md' "$((10#$num))")
 fi
-mpat=${num}-*.md
 
 # get the script's location folder and move into it
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
