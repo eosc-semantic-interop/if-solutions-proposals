@@ -2,6 +2,7 @@
 
 [RFC 1122]:       https://www.rfc-editor.org/info/rfc1122                             "RFC 1122 Requirements for Internet Hosts -- Communication Layers"
 [RFC 4287]:       https://www.rfc-editor.org/info/rfc4287                             "RFC 4287 The Atom Syndication Format"
+[RFC 5829]:       https://www.rfc-editor.org/info/rfc5829                             "RFC 5829 Link Relation Types for Simple Version Navigation between Web Resources"
 [RFC 6573]:       https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
 [RFC 6596]:       https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
