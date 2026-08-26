@@ -8,8 +8,8 @@
   * RT-P05: ✅ Subsetting API Pattern
   * RT-P06: ✅ Host-wide Resource Discovery (New: Focused on mixing Linksets with Sitemaps/Signmaps)
   * RT-P07: ✅ Catalog Listings & Harvesting API
-  * RT-P08: Large Linkset Splits (Paging and OGC-style large map handling)
-  * RT-P09: Version / Release Linking (Handling the timeline of both resources and profiles)
+  * RT-P08: ✅ Large Linkset Splits (Paging and OGC-style large map handling)
+  * RT-P09: ✅ Version / Release Linking (Handling the timeline of both resources and profiles)
   * RT-P10: ✅ Offline (Detached) Copies (For filesystem/detached verification)
   * RT-P11: API-UI & Aggregate Content Parts (Context of SPAs and JS-rendered content)
   * RT-P12: Web Manifests
