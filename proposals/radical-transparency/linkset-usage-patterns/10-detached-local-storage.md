@@ -1,89 +1,96 @@
-# Proposal: Detached Local Storage Pattern
-**Attaching Profile Declarations to Filesystem Content and Downloads**
+# Linkset Usage Pattern: Detached Local Storage
 
-## 1. Introduction to the Problem Space
-In modern data ecosystems (such as BIM, GIS, and Open Science), data must be highly diverse and rapidly evolvable. To achieve interoperability without central monopolization, different communities require specialized "profiles" (sub-schemas, validation shapes, and localized compliance rules) built on top of base formats.
+## Pattern Name
 
-On the Web, managing this diversity is low-cost and dynamic thanks to Content Negotiation and HTTP headers. However, **as soon as a data resource lands on a local filesystem, this rich contextual metadata is instantly lost.** Users and applications are forced to rely entirely on ambiguous file extensions (e.g., `.xml`, `.json`, `.ifc`, `.gpkg`). These extensions only specify the syntax, completely hiding the specific profile or semantic namespace in use. 
+[Detached local Storage][RT-P10]
 
-To bridge this gap, we need a zero-cost, radical-transparency pattern to bootstrap profile compliance directly on physical filesystems, ensuring that files remain self-describing, discoverable, and linkable without modifying the original payload binaries.
 
----
 
-## 2. Inspiration
-This pattern borrows heavily from proven web standards and established filesystem conventions:
-* **The Web:** The use of HTTP `Link` headers with `rel="profile"` (RFC 6906) and the decoupling of resource locations from their architectural constraints.
-* **Deterministic Sidecars:** The decades-old IT convention of using auxiliary files for low-level metadata bootstrapping—such as `package.tar.gz.sha256` for integrity, `video.mp4.srt` for subtitles, or `texture.png.meta` in modern game engines.
-* **Zero-Invasive Extension:** Leaving the original payload untouched so that legacy, profile-unaware applications can read the files without breaking.
+## Readers caution. 
 
----
+Unlike patterns RT-P01 through RT-P09, which are strictly implemented on the server-side to govern web-scale resource discovery and negotiation, RT-P10 is a client-side environment pattern. It defines a vision for how digital assets at rest on a physical filesystem maintain their machine-actionable metadata.
 
-## 3. Core References
-* **RFC 6906:** The 'profile' Link Relation Type.
-* **RFC 9264:** Linkset: Media Types and Link Relations (Representing links between resources as JSON/JSON-LD).
-* **W3C Profiles Vocabulary:** Content Negotiation by Profile.
+Instead of executing HTTP transactions, RT-P10 utilizes local file anchors (relative URIs) to bind detached local binaries to their global, web-resolvable profiles and persistent identities. It is intended for implementation by download clients, browser plugins, navigators or viewers or file-systems, and local data integration pipelines.
 
----
+This should become an integral approach to proper flagging (security sandboxing) of filesystems on 'connected' devices: tracing the (untrusted) provenance of downloads should go hand in hand with caching retrieved 'navigational information' on those resources.
 
-## 4. The Core Pattern
 
-The Radical Transparency Pattern operates on two distinct, synchronized layers:
+## Goal 
 
-### 4.1 Tier A: The Web Layer (Download & Transport)
-When a client requests a resource, the server MUST emit the profile declarations. It does this via standard HTTP `Link` headers pointing to the applicable profile URIs, or by referencing an external linkset document:
+The objective of this pattern is to prevent the instant loss of semantic context, profile compliance, and web identity that occurs when a digital asset is downloaded and detached from its HTTP transport layer onto a local filesystem. By utilizing non-invasive sidecar linksets and OS-level extended attributes, downloaded files remain self-describing, discoverable, and linkable without altering the original binary payloads.
 
-```http
-HTTP/1.1 200 OK
-Content-Type: application/x-step
-Link: <https://example.org/profiles/nl-sfb-v2>; rel="profile",
-      <file:///./building.ifc.ls.json>; rel="linkset"
+
+## Motivation
+
+On the web, content negotiation and HTTP headers dynamically communicate rich metadata (such as validation profiles, licensing, and persistent identifiers). However:
+* The Metadata Void: Once a file lands on a local hard drive, this transport context is stripped. Users and scripts are forced to rely entirely on ambiguous file extensions (e.g., .json, .ttl, .csv) which specify only syntax, completely hiding the specific profile or semantic namespace in use.
+* The Payload Integrity Constraint: Injecting metadata directly into file binaries often corrupts them, breaks strict file-format schemas (e.g., NetCDF, Shapefiles, IFC), or violates cryptographic hashes used for data integrity.
+* Legacy Software Preservation: A zero-invasive approach is required to allow legacy, profile-unaware desktop applications to read the raw files normally, while enabling modern, RT-aware agents to immediately parse the detached context.
+
+## Encoding
+
+The detached metadata is materialized on the filesystem using two mutually reinforcing, non-invasive mechanisms:
+
+* The Deterministic Sidecar (*.ls.json): For any downloaded payload file named [filename].[ext], a companion file named [filename].[ext].ls.json is placed in the exact same directory. 
+  * The sidecar MUST be a valid RFC 9264 Linkset serialized as JSON or JSON-LD.
+  * The linkset's anchor uses a local relative file path (e.g., ./[filename].[ext]) to identify the payload.
+  * The linkset binds this local anchor to global HTTP/HTTPS target URIs (for profiles, licenses, and PIDs).
+
+* The OS-Level Accelerator (xattr): To allow rapid indexing by operating system daemons without parsing directory trees, compliant tools can optionally write an Extended File Attribute to the payload file:
+  * Attribute Name: `user.linkset`
+  * Attribute Value: A valid URI string pointing either to the local sidecar (file:///./[filename].[ext].ls.json) or to an authoritative live web resource.
+
+
+
+## Sketch
+
+``` 
+Local Filesystem Directory:
++-- filename.ext                 <-- Raw downloaded payload (untouched)
++-- filename.ext.ls.json         <-- Deterministic Sidecar (JSON-LD Linkset) [3]
+          | 
+          +-- anchor: "./filename.ext"
+          +-- rel="profile" ------> [ <profile-uri> ] 
+          +-- rel="cite-as" ------> [ <doi-deref-uri> ] 
+          +-- rel="license" ------> [ <license-uri> ] 
 ```
 
-### 4.2 Tier B: The Filesystem Layer (At Rest)
-Once downloaded, the HTTP header context is materialized on the local file system using two mutually reinforcing mechanisms:
 
-#### 4.2.1 The Deterministic Sidecar (`*.ls.json`)
-For any payload file named `[filename].[ext]`, an optional sidecar file named `[filename].[ext].ls.json` is placed in the exact same directory. 
-* The sidecar MUST be a valid **RFC 9264 Linkset** serialized as JSON or JSON-LD.
-* It explicitly binds the local payload file to its global, resolvable profile URIs.
+## Design Considerations
 
+* The Local-to-Global Bridge: Because the sidecar is a standard [RFC 9264 linkset][RFC 9264], it seamlessly handles heterogeneous environments. A desktop validation tool can read ./aphia-record-36.json, resolve its `rel=profile` target over the internet, and validate the local file against the global schema on-the-fly.
+* Disconnected (Air-Gapped) Environments: In secure or offline contexts (such as maritime research vessels at sea), the targets in the sidecar can point to a replicated local register cache (as outlined in the OGC 26-021 architecture), allowing validation to succeed completely offline.
+
+
+## Implementation Example: WoRMS Aphia Record Download
+
+In this scenario, a marine biology pipeline downloads taxonomic record 36 (the European lobster, Homarus gammarus) from the World Register of Marine Species (WoRMS) API. The pipeline downloads the bare JSON data as aphia-record-36.json, but writes a deterministic sidecar aphia-record-36.json.ls.json alongside it to preserve the Radical Transparency context.
+
+``` 
+Local Filesystem Directory:
++-- aphia-record-36.json         <-- Raw downloaded payload (untouched)
++-- aphia-record-36.json.ls.json <-- Deterministic Sidecar (JSON-LD Linkset)
+```
+
+Deterministic Sidecar (aphia-record-36.json.ls.json):
 ```json
 {
   "linkset": [
     {
-      "anchor": "file:///./building.ifc",
-      "profile": [
-        {"href": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2/TC1/HTML/"},
-        {"href": "https://bimloket.nl/profile/nl-sfb-v2"}
-      ],
-      "type": [
-        {"href": "application/x-step"}
+      "anchor": "./aphia-record-36.json",
+      "profile": [{ "href": "https://marinespecies.org/ns/profiles/aphia-record+json" }],
+      "cite-as": [{ "href": "https://doi.org/10.14284/170" }],
+      "license": [{ "href": "https://creativecommons.org/licenses/by/4.0/" }],
+      "alternate": [
+        { 
+          "href": "https://marinespecies.org/id/taxname/36",
+          "type": "text/turtle"
+        }
       ]
     }
   ]
 }
 ```
 
-#### 4.2.2 The OS-Level Accelerator (`xattr`)
-To allow blazingly fast indexing by the operating system or localized daemons without parsing the filesystem directory tree, compliant tools can optionally write an Extended File Attribute to the payload file:
-* **Attribute Name:** `user.linkset`
-* **Attribute Value:** A valid URI string. This can either point to the local sidecar (`file:///./building.ifc.ls.json`) or point directly to an authoritative, live web resource (`https://api.example.org/models/123/linkset`) if online validation is preferred.
-
-> **Fallback Strategy:** If the file is transferred over an environment that strips extended attributes (e.g., FAT32 drives, email attachments), the architecture gracefully falls back to looking for the deterministic `*.ls.json` filename convention.
-
----
-
-## 5. Application Examples
-
-### 5.1 BIM Industry (IFC File)
-A construction engineer downloads a structural model:
-* **Payload:** `bridge_design.ifc` (Legacy BIM software opens this normally to view the 3D geometry).
-* **Sidecar:** `bridge_design.ifc.ls.json` (A compliance checker reads this sidecar, detects that the file claims conformity to the `https://bimloket.nl/profile/ifc4-infra` profile, and automatically executes the correct SHACL validation rules against it).
-
-### 5.2 GIS Industry (GeoPackage File)
-A city planner exports a parcel dataset:
-* **Payload:** `amsterdam_parcels.gpkg` (A standard SQLite container).
-* **Extended Attribute:** `user.linkset` $\rightarrow$ `https://data.amsterdam.nl/datasets/parcels/profile-linkset.json`
-* **Result:** A GIS application immediately knows which specific municipal metadata standards and coordinate reference profile transformations apply, without having to extract and parse internal `gpkg_metadata` system tables first.
-
-
+[RFC 9264]: https://www.rfc-editor.org/info/rfc9264                             "RFC 9264 Linksets"
+[RT-P10]: ./10-detached-local-storage.md                                      "Detached local storage"

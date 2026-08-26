@@ -139,7 +139,7 @@ This example demonstrates a machine agent requesting a Marine Research dataset b
 All mentioned links refer to the last one as their local webmap of interconnected, related resources through this header in the HTTP-Response:
 
 ```
-Link: <https://marineinfo.org/id/dataset/90-ls.json>; rel=linkset
+Link: <https://marineinfo.org/id/dataset/1447-ls.json>; rel=linkset
 ``` 
 
 That linkset's content in turn describes the various uri in this pattern and their relative roles:

@@ -10,9 +10,9 @@ The objective of this pattern is to facilitate the granular detection of compati
 
 ## Motivation
 
-The creation by simple declaration of new profiles is intentionally open ended and low cost. The practice encourages anyone to explicitely declare "what they actually created" as conforming to a formal design specification, even if that turns out to be a one of a kind. The concept behind radical transparency activaly encourages this "declare your own norms" aproach above the current practice to "hide all design". 
+The creation by simple declaration of new profiles is intentionally open ended and low cost. The practice encourages anyone to explicitly declare "what they actually created" as conforming to a formal design specification, even if that turns out to be a one of a kind. The concept behind radical transparency actively encourages this "declare your own norms" approach above the current practice to "hide all design". 
 
-To enable this approach the [RT-P01] pattern requires nothing more than the construction of a solid profile-uri wihtin ones own domain authority, not a standardisation committee or complex governance framework.  While those obviously have their role, and are not excluded from any trustful Radical Transparency approach at all, they can be overwhelming. This perception should never become an excuse for not having actual profile declarations.
+To enable this approach the [RT-P01] pattern requires nothing more than the construction of a solid profile-uri within ones own domain authority, not a standardisation committee or complex governance framework.  While those obviously have their role, and are not excluded from any trustful Radical Transparency approach at all, they can be overwhelming. This perception should never become an excuse for not having actual profile declarations.
 
 Obviously, when profiles can be created as easily as web-pages, some post-creation alignment technique is due to allow discovering equivalence or composition of profiles through some description of the relation between them.
 
@@ -60,7 +60,7 @@ The following link relations are in use to connect composing profiles to their m
 
 | Relation Type	                | Specification Source                          | Technical Function | 
 | :---------------------------- | :---------------------------------------------| :----------------- |
-| rel= http//schema.org/hasPart | [schema:hasPart](http://schema.org/hasPart)   | Declares that a profile is composed of (or includes) another profile, triggering the inference logic.
+| rel=http://schema.org/hasPart | [schema:hasPart](http://schema.org/hasPart)   | Declares that a profile is composed of (or includes) another profile, triggering the inference logic.
 | rel=type                      | [RFC 6903]                                    | (Optional) Explicitly types a resource as being a profile identifier, providing metadata about the role of the URI in the chain.
 
 
