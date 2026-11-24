@@ -102,7 +102,7 @@ Example: `profiles.ls.json` -- This fragment focuses exclusively on the "What is
   "linkset": [
     {
       "anchor": "https://marineinfo.org/id/institute/36",
-      "collection": { "href": "https://marineinfo.org/id/institute/36.ls.json" },
+      "collection": [{ "href": "https://marineinfo.org/id/institute/36.ls.json" }],
       "profile": [
         { "href": "https://marineinfo.org/profiles/institute" },
         { "href": "https://schema.org/Organization" }
@@ -120,7 +120,8 @@ Example: `variants.ls.json` -- This fragment focuses on 'which variants do exist
     {
       "anchor": "https://marineinfo.org/id/institute/36",
       "collection": [
-        { "href": "https://marineinfo.org/id/institute/36.ls.json", "type": "application/linkset+json" }
+        { "href": "https://marineinfo.org/id/institute/36.ls.json", 
+          "type": "application/linkset+json" }
       ],
       "self": [
         { "href": "https://marineinfo.org/id/institute/36" }

@@ -186,7 +186,7 @@
          style="font-size:4.7625px;fill:#26a269;stroke:none;stroke-width:0.264583"
          x="126.67908"
          y="112.59158"
-         id="tspan4136">Infered</tspan><tspan
+         id="tspan4136">Inferred</tspan><tspan
          sodipodi:role="line"
          style="font-size:4.7625px;fill:#26a269;stroke:none;stroke-width:0.264583"
          x="126.67908"
@@ -201,14 +201,14 @@
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';stroke-width:0.264583"
-       x="24.71167"
+       x="21.0"
        y="93.409286"
        id="text1647"><tspan
          sodipodi:role="line"
          id="tspan1645"
          style="font-size:4.7625px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-         x="24.71167"
-         y="93.409286">&lt;member01-profile-uri&gt;</tspan></text>
+         x="21.0"
+         y="93.409286">&lt;member-01-profile-uri&gt;</tspan></text>
     <path
        id="path3101"
        style="fill:none;stroke:#613583;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -239,14 +239,14 @@
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';stroke-width:0.264583"
-       x="24.71167"
+       x="21.0"
        y="66.950951"
        id="text3935"><tspan
          sodipodi:role="line"
          id="tspan3933"
          style="font-size:4.7625px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-         x="24.71167"
-         y="66.950951">&lt;member02-profile-uri&gt;</tspan></text>
+         x="21.0"
+         y="66.950951">&lt;member-02-profile-uri&gt;</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#1a5fb4;stroke-width:0.264583"

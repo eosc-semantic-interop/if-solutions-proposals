@@ -39,12 +39,12 @@ Link: <composite-profile-uri>; rel=profile
 and then additionally: 
 
 ```
-# from the original <resource-uri> as anchor
-Link: <member-01-profile-uri>; rel=profile, 
-      <member02-profile-uri>; rel=profile
+# from the <composite-profile-uri> as anchor
+Link: <member-01-profile-uri>; rel=http://schema.org/hasPart,
+      <member-02-profile-uri>; rel=http://schema.org/hasPart
 ```
 
-to actually mean that the original `<resource-uri>` is conforming to all of the profiles: `<composite-profile-uri>`, `<member01-profile-uri>`, and `<member02-profile-uri>`
+to actually mean that the original `<resource-uri>` is conforming to all of the profiles: `<composite-profile-uri>`, `<member-01-profile-uri>`, and `<member-02-profile-uri>`
 
 
 ## Sketch
@@ -61,7 +61,9 @@ The following link relations are in use to connect composing profiles to their m
 | Relation Type	                | Specification Source                          | Technical Function | 
 | :---------------------------- | :---------------------------------------------| :----------------- |
 | rel=http://schema.org/hasPart | [schema:hasPart](http://schema.org/hasPart)   | Declares that a profile is composed of (or includes) another profile, triggering the inference logic.
-| rel=type                      | [RFC 6903]                                    | (Optional) Explicitly types a resource as being a profile identifier, providing metadata about the role of the URI in the chain.
+| rel=profile                   | [RFC 6906]                                    | Declares conformity of the asset to the composite profile ([RT-P01]).
+| rel=type                      | [RFC 6903]                                    | (Optional) Explicitly types a resource as a profile (`http://www.w3.org/ns/dx/prof/Profile`), clarifying the role of the URI in the chain.
+| rel=describedby               | [powder-dr]                                   | (Optional) Points from a profile URI to its human- and/or machine-readable description.
 
 
 See [IANA Link relations][IANA relreg]
@@ -82,7 +84,7 @@ This distinction is made to prevent conceptual collision with patterns for struc
 Machine agents SHALL infer conformance by following a recursive discovery chain. Upon fetching an Asset URI and discovering a rel="profile" the agent MUST fetch the Profile URI. 
 
 The agent SHALL then inspect this response on the Profile URI for 
-(a) any `rel=type` to `<https://www.rfc-editor.org/info/rfc6906>` testifying of its role and purpose, 
+(a) any `rel=type` to `<http://www.w3.org/ns/dx/prof/Profile>` testifying of its role and purpose, 
 (b) any `rel=http://schema.org/hasPart` link-relations it has to other profiles, and 
 (c) any `rel=describedby` link-relations it declares to more semantic and tuned representations that completes the available semantic understanding of the profile.
 
@@ -105,7 +107,7 @@ For any combination where:
 - and optionally both profiles are explicitly 'typed' through
   ```
   # from both <profile-uri> <2nd-profile-uri> anchor
-  Link: <https://www.rfc-editor.org/info/rfc6906>; rel=type
+  Link: <http://www.w3.org/ns/dx/prof/Profile>; rel=type
   ```
 
 One can infer: 
@@ -147,7 +149,7 @@ Sample Header Output:
 ```
 HTTP/1.1 200 OK
 Content-Type: text/turtle; charset=UTF-8
-Link: <https://www.rfc-editor.org/info/rfc6906>; rel=type,
+Link: <http://www.w3.org/ns/dx/prof/Profile>; rel=type,
       <https://marineinfo.org/profiles/dataset>; rel=describedby,
       <https://semiceu.github.io/DCAT-AP/>; rel=http://schema.org/hasPart
 ```
@@ -159,7 +161,9 @@ Link: <https://www.rfc-editor.org/info/rfc6906>; rel=type,
 
 [RFC 6573]: https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
 [RFC 6903]: https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
+[RFC 6906]: https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
 [IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
+[powder-dr]: https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"
 [RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
 [RT-P02]: ./02-profile-composition.md                                         "Profile Composition"
 [RT-P05]: ./05-subsetting-api.md                                              "Subsetting API"

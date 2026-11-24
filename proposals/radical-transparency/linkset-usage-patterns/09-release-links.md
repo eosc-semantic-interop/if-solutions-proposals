@@ -20,7 +20,7 @@ In a dynamic data ecosystem, resources are continuously updated, but stability i
 
 ## Relation to other patterns
 
-Being a pattern that is applicable to any digital asset, it lends itself logically to so called "pattern weaving", combinations of patterns applied simultanuously to some resources.
+Being a pattern that is applicable to any digital asset, it lends itself logically to so called "pattern weaving", combinations of patterns applied simultaneously to some resources.
 Specifically we want to mention:
 * That subsetting APIs [RT-P05] are often versioned, and note that the datasets they rely on will evolve according to their own lifecycle. Each version of the one can simply link to the matching version of the other (through `rel=cite-as`). Following the chain of dependency, this will typically call for a new (dot) release of the API when it decides to switch to a new version of the backing dataset.
 * That versioning of profiles should consider applying the `rel=http://schema.org/hasPart` link from [RT-P02] to allow inferring generic profile assumptions down to such specific releases.
@@ -50,7 +50,7 @@ This uses [RFC 5829] (Versioning) in a straightforward and minimalistic way:
 
 ### Design Considerations: Profile "Lazy Pinning"
 
-Following the semantic logic of [RT-P02], versioned profiles (e.g., an OGC WFS 2.2 profile) SHOULD include a rel="http://schema.org/hasPart" link to the abstract (timeless) variant of the profile. This allows an agent to discover the most specific version while inferring that the resource also conforms to the general guarantees of the abstract Profile.
+Following the semantic logic of [RT-P02], versioned profiles (e.g., an OGC WFS 2.2 profile) SHOULD include a `rel="http://schema.org/hasPart"` link to the abstract (timeless) variant of the profile. Because a specific versioned profile incorporates and narrows all guarantees of the timeless abstract profile, `P_v2.2 --hasPart--> P_abstract` follows the exact entailment direction of [RT-P02]. This allows an agent to discover the most specific version while inferring that the resource also conforms to the general guarantees of the abstract Profile.
 
 ## Implementation Example: MarineInfo Dataset Release 
 
@@ -75,6 +75,8 @@ Release Linkset (dataset-90-v2.1.ls.json):
   "linkset": [
     {
       "anchor": "https://marineinfo.org/id/dataset/90/v2.1",
+      "cite-as": [{ "href": "https://doi.org/10.14284/90.v2.1" }],
+      "collection": [{ "href": "https://marineinfo.org/id/dataset/90" }],
       "predecessor-version": [{ "href": "https://marineinfo.org/id/dataset/90/v2.0" }],
       "version-history": [{ "href": "https://marineinfo.org/id/dataset/90/history" }]
     }
@@ -82,7 +84,7 @@ Release Linkset (dataset-90-v2.1.ls.json):
 }
 ```
 
-Note that there are multiple competing formats out there to describe the 'history' (ie. the list of all known versions). This pattern does not inforce the use of any of these. 
+Note that there are multiple competing formats out there to describe the 'history' (ie. the list of all known versions). This pattern does not enforce the use of any of these. 
 However, conforming to the rest of this pattern work, we do:
 * suggests to provide a profile conformity declaration ([RT-P01]) to guide consumers into how to parse the information
 * just apply a simple linkset extension (adding keyword `version`) to complete this example
@@ -100,8 +102,6 @@ History Linkset (dataset/90/history)
           "version": "1.0",
           "release-date": "2023-06-02",
           "title": "Initial release."
-        }, {
-
         }, {
           "href": "https://marineinfo.org/id/dataset/90/v2.0",
           "version": "2.0",

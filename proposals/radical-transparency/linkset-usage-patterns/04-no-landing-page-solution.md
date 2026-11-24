@@ -12,7 +12,7 @@ To enable machine-actionability and identity persistence for digital resources w
 
 This ensures agents can navigate the resource graph regardless of the representation format retrieved. It introduces a subtle re-alignment in the navigation processes from content vs metadata interactions between humans and robots. As such it actually re-affirms the role of the user-agent as a robot itself with a clear human-assisting role. 
 
-Finally, this replaces the expectations on server side implementation: they no longer need to include (custom) visual design and experience flows into these intermediate HTML landing pages, in stead they can just and assume client side plugins to visualise the provided affordances.
+Finally, this replaces the expectations on server side implementation: they no longer need to include (custom) visual design and experience flows into these intermediate HTML landing pages, instead they can simply assume client-side plugins to visualise the provided affordances.
 
 
 ## Motivation
@@ -23,7 +23,7 @@ In the current web landscape, persistent identifiers (PIDs) like DOIs typically 
 This landing page functions as an intermediate gateway. Its layout and affordances depend on the implementation provided, but generally offers a combination of these:
 
 * mentioning the core persistent identifier for citations
-* highlighting core metadata information (autor, title, owner, license, ...)
+* highlighting core metadata information (author, title, owner, license, ...)
 * share navigation paths to associated metadata records in various models, or services that visualize them
 * including providing the actual artifact/content download link
 
@@ -40,7 +40,7 @@ This allows to still provide human-readable interfaces, but repositioned to (jus
 
 ## Relations to other patterns
 
-There is possible confusion or overlap with [RT-P03]. This comes from the fact that from a conceptual view-point there is only real world actual thing (the digital core asset) unambiguously referenced to with one persistent identifier (its `<resource-pid-uri>`). From this viewpoint one might consider meta-data records for that thing to be delivered through content-negotiation on the same resource. In this case a `rel=alternate` approach from [RT-PO3] offers a natural match, as the `rel=describedby` guidance is never needed to grab that information.
+There is possible confusion or overlap with [RT-P03]. This comes from the fact that from a conceptual view-point there is only one actual thing (the digital core asset) unambiguously referenced to with one persistent identifier (its `<resource-pid-uri>`). From this viewpoint one might consider meta-data records for that thing to be delivered through content-negotiation on the same resource. In this case a `rel=alternate` approach from [RT-P03] offers a natural match, as the `rel=describedby` guidance is never needed to grab that information.
 
 In most practical cases though, the persistent identifier used in citations is resolved by external services that simply provide a redirect. These are distinct from some primary catalogue services publishing distinct metadata-resources describing them; in turn often distinct from the archives that offer downloadable resources for the actual core content. In these cases the extra `rel=describedby` and `rel=describes` from this pattern [RT-P04] come into view. Weaving in pattern [RT-P03] for different variants of any these resources keeps the roles clear and obvious.
 
@@ -67,7 +67,7 @@ In this approach, the existing HTML page describing the identified content is re
 
 ```
 # from the <core-content-uri> as anchor
-Link: <html-description-uri>; rel=describedby; type: text/html
+Link: <html-description-uri>; rel=describedby; type="text/html"
 ```
 
 ```
@@ -77,7 +77,7 @@ Link: <core-content-uri>; rel=describes
 
 This should be seen as an optional server-provided human-oriented view that describes and offers essential navigation and features concerning the actual identified resource.
 
-Note that, this option, still allows to provide (recommended) some machine-actionable description variant, possibly through an embedded HTML `<script type="application=ld+json">` tag.
+Note that, this option, still allows to provide (recommended) some machine-actionable description variant, possibly through an embedded HTML `<script type="application/ld+json">` tag.
 
 
 ### Option (b) - Only provide a core semantic model description, leaving human-centric description rendering to browser-plugin
@@ -89,7 +89,7 @@ The clear human-vs-machine equivalence of the descriptive role of these resource
 
 ```
 # from the <core-content-uri> as anchor
-Link: <ma-description-uri>; rel=describedby; type: application/ld+json
+Link: <ma-description-uri>; rel=describedby; type="application/ld+json"
 ```
 
 ```
@@ -119,6 +119,7 @@ The following link relations are mandated for declaring the machine-readable lin
 | ------------- | ----------------------| ------------------ |
 | rel="cite-as"	| [RFC 8574 - cite-as link relation][RFC 8574] | Conveys a Preferred URI for Referencing the core digital asset in this pattern.
 | rel="describedby"	| [W3C Protocol for Web Description Resources][powder-dr] | Connects the resource directly to its metadata descriptions (human or machine-actionable), effectively turning the former "landing page" into just another descriptive variant.
+| rel="describes"	| [RFC 6892 - The 'describes' Link Relation Type][RFC 6892] | Connects a metadata description resource back to the core digital asset it describes (inverse of `rel="describedby"`).
 
 
 See [IANA Link relations][IANA relreg]
@@ -130,10 +131,10 @@ This example demonstrates a machine agent requesting a Marine Research dataset b
 
 
 * DOI for the dataset: https://doi.org/10.14284/170
-* DataSet content URI: https://www.marinespecies.org/aphia.php?p=search
+* Dataset content URI: https://marine-data-archive.org/data/39475-02348590-2234.csv
 * Dataset description URI: https://marineinfo.org/id/dataset/1447
-* Dataset description Turtle Variant: https://marineinfo.org/id/dataset/1477.ttl
-* Linkset (Variant Menu): https://marineinfo.org/id/dataset/1477-ls.json
+* Dataset description Turtle Variant: https://marineinfo.org/id/dataset/1447.ttl
+* Linkset (Variant Menu): https://marineinfo.org/id/dataset/1447-ls.json
 
 
 All mentioned links refer to the last one as their local webmap of interconnected, related resources through this header in the HTTP-Response:
@@ -145,38 +146,38 @@ Link: <https://marineinfo.org/id/dataset/1447-ls.json>; rel=linkset
 That linkset's content in turn describes the various uri in this pattern and their relative roles:
 Note how this also blends in the usage of [RT-P03]
 
-```
+```json
 { "linkset":
   [
     { "anchor"       : "https://marineinfo.org/id/dataset/1447",
       "describes"    : [ {"href": "https://marine-data-archive.org/data/39475-02348590-2234.csv" }],
       "alternate"    : [
-        {"href"        : "https://marineinfo.org/id/institute/1447.ttl",
+        {"href"        : "https://marineinfo.org/id/dataset/1447.ttl",
          "type"        : "text/turtle; charset=utf-8"
         },
-        {"href"        : "https://marineinfo.org/id/institute/1447.jsonld",
+        {"href"        : "https://marineinfo.org/id/dataset/1447.jsonld",
          "type"        : "application/ld+json"
         },
-        {"href"        : "https://marineinfo.org/id/institute/1447.html",
+        {"href"        : "https://marineinfo.org/id/dataset/1447.html",
          "type"        : "text/html; charset=utf-8"
         }
       ]
     },
     { "anchor"       : "https://marine-data-archive.org/data/39475-02348590-2234.csv",
-      "describedby"  : [ {"href": "https://marineinfo.org/id/dataset/1447"} ]
+      "describedby"  : [ {"href": "https://marineinfo.org/id/dataset/1447"} ],
       "cite-as"      : [ {"href": "https://doi.org/10.14284/170"} ]
-    }, 
-    { "anchor"       : "https://marineinfo.org/id/institute/1447.ttl",
-      "self"         : [ {"href": "https://marineinfo.org/id/institute/1447"} ]
-    }, 
-    { "anchor"       : "https://marineinfo.org/id/institute/1447.jsonld",
-      "self"         : [ {"href": "https://marineinfo.org/id/institute/1447"} ]
-    }, 
-    { "anchor"       : "https://marineinfo.org/id/institute/1447.html",
-      "self"         : [ {"href": "https://marineinfo.org/id/institute/1447"} ]
+    },
+    { "anchor"       : "https://marineinfo.org/id/dataset/1447.ttl",
+      "self"         : [ {"href": "https://marineinfo.org/id/dataset/1447"} ]
+    },
+    { "anchor"       : "https://marineinfo.org/id/dataset/1447.jsonld",
+      "self"         : [ {"href": "https://marineinfo.org/id/dataset/1447"} ]
+    },
+    { "anchor"       : "https://marineinfo.org/id/dataset/1447.html",
+      "self"         : [ {"href": "https://marineinfo.org/id/dataset/1447"} ]
     }
   ]
-} 
+}
 ```
 
 
@@ -211,13 +212,14 @@ Both follow the same conceptual semantics behind the used link-relations. Still,
 
 In software design and modelling it is considered an anti-pattern during analysis to be modelling the solution one is trying to replace. Something that is captured in the quote attributed to [Rich Hickey](https://download.clojure.org/presentations/DesignInPractice.pdf) "Model the problem, not the solution". This is precisely what this is about.
 
-The power of using web-linking and linksets enable us to reconsider our current addiction to metadata-record-like landing pages. Rather than re-instantiating them as a material necessity, they can be replaced by declarative statements.  On top of those, the useful affordances these pages are offering can simply "emerge": be rendered by user agents and digital assistents. This solution path has the additional benefit of reducing the server side effort and increasing client-side context-aware relevance.
+The power of using web-linking and linksets enable us to reconsider our current addiction to metadata-record-like landing pages. Rather than re-instantiating them as a material necessity, they can be replaced by declarative statements.  On top of those, the useful affordances these pages are offering can simply "emerge": be rendered by user agents and digital assistants. This solution path has the additional benefit of reducing the server side effort and increasing client-side context-aware relevance.
 
 
 
 
 
 
+[RFC 6892]: https://www.rfc-editor.org/info/rfc6892                             "RFC 6892 The 'describes' Link Relation Type"
 [RFC 8574]: https://www.rfc-editor.org/info/rfc8574                             "RFC 8574 cite-as link relation"
 [IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
 [powder-dr]: https://www.w3.org/TR/powder-dr/                                    "Protocol for Web Description Resources (POWDER): Description Resources"

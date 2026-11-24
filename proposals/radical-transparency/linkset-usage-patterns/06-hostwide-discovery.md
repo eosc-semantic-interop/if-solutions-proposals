@@ -46,7 +46,7 @@ For specific examples and documentation showing and advocating the `xhtml:link` 
 * [Adobe's home sitemap](https://www.adobe.com/home-sitemap.xml)
 * [Google's developer docs](https://developers.google.com/search/docs/specialty/international/localized-versions#example_2)
 
-The use of `xhtml:link` within a sitemap brings the web-linking model full circle. While RFC 8288 [RFC 8288][rfc8288] provides the formal model for externalizing links from the HTML payload into the HTTP header, it fundamentally encodes the same relationship logic originally introduced by HTML `<link>` tags. By using the xhtml namespace, we maintain a consistent serialization path: from HTML tags to XML-embedded links, all while adhering to the same semantic registry defined by IANA.
+The use of `xhtml:link` within a sitemap brings the web-linking model full circle. While RFC 8288 [RFC 8288] provides the formal model for externalizing links from the HTML payload into the HTTP header, it fundamentally encodes the same relationship logic originally introduced by HTML `<link>` tags. By using the xhtml namespace, we maintain a consistent serialization path: from HTML tags to XML-embedded links, all while adhering to the same semantic registry defined by IANA.
 
 
 ### Signposting.org: signmaps
@@ -62,9 +62,9 @@ This exactly matches signposting's signmaps approach. [signmaps]
 
 ### Formal Alignment: ResourceSync as the Foundation 
 
-To ensure maximum interoperability within the scholarly and scientific web, [RT-P06] adopts the ResourceSync Framework Specification (ANSI/NISO Z39.99-2017) [ResourceSync] as its formal base. While common web-crawlers (Google, Adobe) have historically used `<xhtml:link>` injections in sitemaps for localized variants, the `<rs:ln>` element from ResourceSync provides a more robust, validated, and machine-actionable trajectory.
+To ensure maximum interoperability within the scholarly and scientific web, [RT-P06] adopts the ResourceSync Framework Specification (ANSI/NISO Z39.99-2017) [resourcesync] as its formal base. While common web-crawlers (Google, Adobe) have historically used `<xhtml:link>` injections in sitemaps for localized variants, the `<rs:ln>` element from ResourceSync provides a more robust, validated, and machine-actionable trajectory.
 
-In accordance with Postel's Law—"be conservative in what you do, be liberal in what you accept from others" ([RFC 1122][RFC 1122]—, providers adhering to Radical Transparency SHOULD be conservative in their output by strictly employing the rs namespace (xmlns:rs="http://www.openarchives.org/rs/terms/") and the `<rs:ln>` element. This ensures that generated sitemaps are verifiable against the formal [ResourceSync XSD][rs-ln-xsd]. Conversely, consumers MUST be liberal in what they accept, supporting both rs:ln and the widely encountered xhtml:link variants to ensure compatibility with broader web practices.
+In accordance with Postel's Law—"be conservative in what you do, be liberal in what you accept from others" ([RFC 1122])—, providers adhering to Radical Transparency SHOULD be conservative in their output by strictly employing the rs namespace (xmlns:rs="http://www.openarchives.org/rs/terms/") and the `<rs:ln>` element. This ensures that generated sitemaps are verifiable against the formal [ResourceSync XSD][rs-ln-xsd]. Conversely, consumers MUST be liberal in what they accept, supporting both rs:ln and the widely encountered xhtml:link variants to ensure compatibility with broader web practices.
 
 
 ## Encoding 
@@ -75,7 +75,7 @@ To implement this pattern, the server MUST:
 2. Within each `<url>` block, following the mandatory `<loc>` element, include one or more `<rs:ln>` elements.
 3. Each link MUST contain a rel attribute and an href attribute pointing to the target resource (e.g., a profile or a linkset).
 
-In general, through the use of external xml namespace, these additions to the `sitemap.xml` can simply be ignored by robots that are unware of their use and semantics. Robots that are aware, can apply the additional information to optimise their working.
+In general, through the use of external xml namespace, these additions to the `sitemap.xml` can simply be ignored by robots that are unaware of their use and semantics. Robots that are aware, can apply the additional information to optimise their working.
 
 ### Strategic focus to the minimal 
 
@@ -85,7 +85,7 @@ While the Sitemap protocol allows for a wide range of XML injections, Radical Tr
 2. `rel=linkset`: To provide the navigation map that documents all other semantic connections of the resource.  (e.g. content negotiation menus from RT-P03 or provenance chains from RT-P05)
 3. `rel=api-catalog`: This is actually a special case of the above as api-catalogs are essentially linksets.
 
-To be clear: we see no absolute value to move or copy all the resource level details captured in the linksets into the sitemap. By offloading granular interaction details to dedicated linkset files ([RFC 9264][RFC 9264]), we ensure that the sitemap remains a high-performance index rather than a bloated metadata store. It should be equally clear that the application of this pattern in any way excludes the encoding of more information relations into the signmaps, even if that is duplicating existing linksets. Depending on how certain service deployments are setup and consumed, the balancing act of providing more information in less requests becomes an optimisation task. The kind of engineering that is not affecting nor constraind by the conceptual model. 
+To be clear: we see no absolute value to move or copy all the resource level details captured in the linksets into the sitemap. By offloading granular interaction details to dedicated linkset files ([RFC 9264][RFC 9264]), we ensure that the sitemap remains a high-performance index rather than a bloated metadata store. It should be equally clear that the application of this pattern in any way excludes the encoding of more information relations into the signmaps, even if that is duplicating existing linksets. Depending on how certain service deployments are setup and consumed, the balancing act of providing more information in less requests becomes an optimisation task. The kind of engineering that is not affecting nor constrained by the conceptual model. 
 
 This strategic choice also marks the boundary between [RT-P06] and [RT-P07]. In the latter, we are going to group resources further into domain-specific catalogues (like DCAT or API-Catalogs); it explores how these specialized registries and harvesting APIs augment the standard indexing role for robots.
 

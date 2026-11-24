@@ -32,13 +32,13 @@ On the web, content negotiation and HTTP headers dynamically communicate rich me
 The detached metadata is materialized on the filesystem using two mutually reinforcing, non-invasive mechanisms:
 
 * The Deterministic Sidecar (*.ls.json): For any downloaded payload file named [filename].[ext], a companion file named [filename].[ext].ls.json is placed in the exact same directory. 
-  * The sidecar MUST be a valid RFC 9264 Linkset serialized as JSON or JSON-LD.
+  * The sidecar MUST be a valid RFC 9264 Linkset serialized as JSON (`application/linkset+json`).
   * The linkset's anchor uses a local relative file path (e.g., ./[filename].[ext]) to identify the payload.
   * The linkset binds this local anchor to global HTTP/HTTPS target URIs (for profiles, licenses, and PIDs).
 
 * The OS-Level Accelerator (xattr): To allow rapid indexing by operating system daemons without parsing directory trees, compliant tools can optionally write an Extended File Attribute to the payload file:
   * Attribute Name: `user.linkset`
-  * Attribute Value: A valid URI string pointing either to the local sidecar (file:///./[filename].[ext].ls.json) or to an authoritative live web resource.
+  * Attribute Value: A valid URI or relative reference pointing either to the local sidecar (e.g., `./[filename].[ext].ls.json` or an absolute `file:///` URI) or to an authoritative live web resource.
 
 
 
@@ -47,7 +47,7 @@ The detached metadata is materialized on the filesystem using two mutually reinf
 ``` 
 Local Filesystem Directory:
 +-- filename.ext                 <-- Raw downloaded payload (untouched)
-+-- filename.ext.ls.json         <-- Deterministic Sidecar (JSON-LD Linkset) [3]
++-- filename.ext.ls.json         <-- Deterministic Sidecar (JSON Linkset, RFC 9264)
           | 
           +-- anchor: "./filename.ext"
           +-- rel="profile" ------> [ <profile-uri> ] 
@@ -69,7 +69,7 @@ In this scenario, a marine biology pipeline downloads taxonomic record 36 (the E
 ``` 
 Local Filesystem Directory:
 +-- aphia-record-36.json         <-- Raw downloaded payload (untouched)
-+-- aphia-record-36.json.ls.json <-- Deterministic Sidecar (JSON-LD Linkset)
++-- aphia-record-36.json.ls.json <-- Deterministic Sidecar (JSON Linkset, RFC 9264)
 ```
 
 Deterministic Sidecar (aphia-record-36.json.ls.json):

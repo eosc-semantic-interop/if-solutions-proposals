@@ -8,7 +8,8 @@
 [RFC 6903]:       https://www.rfc-editor.org/info/rfc6903                             "RFC 6903 Additional Link Relations"
 [RFC 6906]:       https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
 [RFC 7089]:       https://www.rfc-editor.org/info/rfc7089                             "RFC 7089 HTTP Framework for Time-Based Access to Resource States -- Memento"
-[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7842 The Profile URI registry"
+[RFC 6892]:       https://www.rfc-editor.org/info/rfc6892                             "RFC 6892 The 'describes' Link Relation Type"
+[RFC 7284]:       https://www.rfc-editor.org/info/rfc7284                             "RFC 7284 The Profile URI Registry"
 [RFC 8288]:       https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
 [RFC 8574]:       https://www.rfc-editor.org/info/rfc8574                             "RFC 8574 cite-as link relation"
 [RFC 8631]:       https://www.rfc-editor.org/info/rfc8631                             "RFC 8631 link relations for webservices"
@@ -17,6 +18,8 @@
 [RFC 9727]:       https://www.rfc-editor.org/info/rfc9727                             "RFC 9727 api-catalog"
 
 [dx-prof]:        https://www.w3.org/TR/dx-prof/                                      "The Profiles Vocabulary"
+[dx-prof-conneg]: https://www.w3.org/TR/dx-prof-conneg/                               "Content Negotiation by Profile"
+[Schema.org]:     https://schema.org/                                                 "Schema.org Vocabulary"
 [ro-crate]:       https://w3id.org/ro/crate/1.2                                       "The RO-Crate 1.2 Profile"
 [IANA relreg]:    https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
 [IANA profreg]:   https://www.iana.org/assignments/profile-uris/                      "IANA register of Profile URIs"
@@ -41,4 +44,3 @@
 [RT-P08]:         ./08-large-linksets.md                                              "Large Linksets"
 [RT-P09]:         ./09-release-links.md                                               "Linking versions and releases" 
 [RT-P10]:         ./10-detached-local-storage.md                                      "Detached local storage"
-[RT-P11]:         ./11-ui-data-parts.md                                               "Linking data parts for UI One Pagers"

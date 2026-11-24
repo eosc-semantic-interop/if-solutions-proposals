@@ -215,7 +215,7 @@
          id="tspan1645"
          style="font-size:4.7625px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
          x="10.097832"
-         y="66.950951">&lt;https://www.rfc-editor.org/info/rfc6906&gt;</tspan></text>
+         y="66.950951">&lt;http://www.w3.org/ns/dx/prof/Profile&gt;</tspan></text>
     <path
        id="path3101"
        style="fill:none;stroke:#613583;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -247,6 +247,6 @@
          id="tspan3109"
          style="font-size:4.7625px;fill:#26a269;fill-opacity:1;stroke-width:0.264583"
          x="105.27058"
-         y="93.409286">rel=desribedby</tspan></text>
+         y="93.409286">rel=describedby</tspan></text>
   </g>
 </svg>

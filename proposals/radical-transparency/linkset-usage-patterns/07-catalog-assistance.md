@@ -38,18 +38,18 @@ To prevent crawlers from getting lost in this hierarchy, [RT-P07] utilizes the S
 * [RT-P05] Connection: When a catalog exposes dynamic subsetting capabilities, it functions as a Subsetting API. RT-P07 provides the link to the service base, which in turn provides the `rel=collection` anchors for individual fragments.
 
 
-Also, this approach alligns with the recommendations of the [ODIS Book](https://book.odis.org/gettingStarted.html#creating-a-sitemap) and taps into actual sitemap generation support that is already implemented in some subsetting-API systems.
+Also, this approach aligns with the recommendations of the [ODIS Book](https://book.odis.org/gettingStarted.html#creating-a-sitemap) and taps into actual sitemap generation support that is already implemented in some subsetting-API systems.
 
 
 ## Encoding 
 
 This pattern implements the "hand-over" from the general sitemap to the specialized catalog using the ResourceSync/Signmap extension elements (`rs:ln`). 
 
-To do this, it introduces a sitemap-hierarchy that allows to mimic the 'collection' or 'containment' relation API-endpoints have to detailed resources they produce. This allows to treat these sitemaps as 'alternative' representations for those API-endpoints.  Applied to itself this approach suggests the well-known api-catalog itself, which is expected to list all local API-endpoints should also receive such sitemap.xml counterpart to be placed in the hierarchy.
+To do this, it introduces a sitemap-hierarchy that allows to mimic the 'collection' or 'containment' relation API-endpoints have to detailed resources they produce. This allows to treat these sitemaps as 'alternative' representations for those API-endpoints. Following the asymmetric identity model of [RT-P03], the live API or LDES feed acts as the primary conceptual resource (pointing to its static sitemap projection via `rel="alternate"`), while the static sitemap variant anchors itself back to that primary service identity via `rel="self"`. Applied to itself, this approach suggests the well-known api-catalog itself, which is expected to list all local API-endpoints, should also receive such a sitemap.xml counterpart to be placed in the hierarchy.
 
 To implement catalog-assisted exposure, providers MUST follow these rules:
 * Bootstrap: provide a root sitemap-index conform to [sitemaps-org] 
-* Catalog-of-Catalogs: an [RFC 9727] compatible `api-catalog` MUST be provided, and listed in the sitemap hierarchy, additionally its content SHOULD be reflected in a dedicated sitemap.xml alternate, which should also be referenced in the sitemap-hierarchy. The `<rs:nl>` should be uses to mark this resource with the `rel=api-catalog`
+* Catalog-of-Catalogs: an [RFC 9727] compatible `api-catalog` MUST be provided, and listed in the sitemap hierarchy, additionally its content SHOULD be reflected in a dedicated sitemap.xml alternate, which should also be referenced in the sitemap-hierarchy. The `<rs:ln>` element should be used to mark this resource with the `rel=api-catalog`
 * Catalog Registration: Every authoritative catalog on the system SHOULD be listed in the above `api-catalog`, and CAN provide itself an alternate in sitemap.xml format.
 * Mandatory Profiling: To enable machine-actionability, each entry SHOULD declare its conformity via `rel=profile` relations. In the various sitemap.xml these SHOULD be encoded through `<rs:ln>` elements.
 
@@ -63,7 +63,7 @@ When designing an exposure strategy, providers should consider the following:
 
 * Crawl Optimization and Protection: To ensure service stability, architects may choose to expose all granular resources in a sitemap hierarchy while simultaneously applying `Disallow` directives in the `robots.txt` for the corresponding API endpoints (e.g., `Disallow: /api/v1/records/**`). This guides automated agents toward the pre-calculated sitemap index and away from resource-intensive search interfaces.
 
-* Redundancy at the Meta-Level: Listing API gateways in both a sitemap and an [RFC 9727 api-catalog][RCFC 9727] is a deliberate choice of "Explorability" over exclusivity. The sitemap ensures the service is discoverable by general-purpose web crawlers, while the `api-catalog` provides a dedicated registry for agents specifically seeking technical contracts (OpenAPI) and service status.
+* Redundancy at the Meta-Level: Listing API gateways in both a sitemap and an [RFC 9727 api-catalog][RFC 9727] is a deliberate choice of "Explorability" over exclusivity. The sitemap ensures the service is discoverable by general-purpose web crawlers, while the `api-catalog` provides a dedicated registry for agents specifically seeking technical contracts (OpenAPI) and service status.
 
 * Delegation of Responsibility: The primary goal of [RT-P07] is to enable a "hand-over." Providers must decide if, and at what level of the hierarchy a general-purpose crawler should stop following sitemap links and start utilizing a specialized harvester (such as an LDES client or STAC crawler) based on the declared `rel=profile`.
 
@@ -80,14 +80,14 @@ When designing an exposure strategy, providers should consider the following:
 | rel=api-catalog | [RFC 9727] | Identifies the resource as a formal registry of services or APIs. | 
 | rel=profile | [RFC 6906] | Declares the standard the catalog adheres to (e.g., STAC, DCAT, OGC), allowing the harvester to select the correct driver. |
 | rel=collection | [RFC 6573] |  As in [RT-P05] we link provided details and subsets back to the api-endpoint that produces them. | 
-| rel=self | [RFC 4287] | As in [RT-P03] we link alternatives back to their core identifying resource. 
-| rel=alternate | [RFC 6596]  | As in [RT-P03] we link to known alternative representations.
+| rel=self | [RFC 4287] | As in [RT-P03], links a static sitemap alternative back to the primary identifying catalog or feed resource it represents.
+| rel=alternate | [RFC 8288] | As in [RT-P03], links a primary catalog or feed endpoint to its static crawlable `sitemap.xml` representation.
 
 
 ## Implementation Example: MarineInfo 
 
 In this example, MarineInfo.org exposes its vast collection of records. Instead of listing every individual dataset in the main sitemap, it delegates to dedicated sub-sitemaps for the various types maintained on the system (As it proves our point we limit ourselves to expanding only one).
-In the process it links to the alternative LDES harvesting protol endpoints that are provided for each of them. 
+In the process it links to the alternative LDES harvesting protocol endpoints that are provided for each of them. 
 Finally these endpoints are also listed in the available api-catalog.
 
 
@@ -108,22 +108,23 @@ The central sitemap.xml delegates to one per type of exposed record, plus the on
 <!-- https://marineinfo.org/sitemap.xml -->
 <sitemapindex
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:rs="http://www.openarchives.org/rs/terms/"i
+    xmlns:rs="http://www.openarchives.org/rs/terms/"
 >
   <!-- First a specific sitemap works as alternate variant for the api-catalog -->
   <sitemap>
     <loc>https://marineinfo.org/.well-known/api-catalog/api-sitemap.xml</loc>
-    <rs:ln rel="self" 
-           href="http://marineinfo.org/.well-known/api-catalog" />
+    <rs:ln rel="self"
+           href="https://marineinfo.org/.well-known/api-catalog"
+           type="application/linkset+json" />
   </sitemap>
-  <!-- The, for the various types: dataset, person, institute, ... we introduce sub-sitemaps 
+  <!-- Then, for the various types (dataset, person, institute, ...) we introduce sub-sitemaps.
      | These function, in turn, as alternatives for the provided (and better tuned) LDES harvesting endpoint.
      -->
   <sitemap><!-- for type dataset  -->
     <loc>https://marineinfo.org/sitemaps/dataset-sitemap.xml</loc>
-    <rs:ln rel="self" 
+    <rs:ln rel="self"
            href="https://marineinfo.org/feed/dataset" />
-    <rs:ln rel="api-catalog" 
+    <rs:ln rel="api-catalog"
            href="https://marineinfo.org/.well-known/api-catalog" />
   </sitemap>
   <sitemap>
@@ -141,7 +142,7 @@ The API-catalog lists all the known API endpoints.
 {
   "linkset": [
     {
-      "anchor"   : "https://marineinfo.org/.well-know/api-catalog",
+      "anchor"   : "https://marineinfo.org/.well-known/api-catalog",
       "item"     : [ // the various different LDES feeds as api-endpoints listed:
         {"href": "https://marineinfo.org/feed/dataset"},
         {"href": "https://marineinfo.org/feed/person"},
@@ -159,7 +160,7 @@ The API-catalog lists all the known API endpoints.
         {"href": "https://w3id.org/ldes/specification" }
       ], 
       "alternate": [ // the sitemap alternative to retrieve all datasets:
-        {"href": "https://marineinfo.org/.well-known/api-catalog/api-sitemap.xml", 
+        {"href": "https://marineinfo.org/sitemaps/dataset-sitemap.xml", 
          "type": "application/xml; profile=http://www.sitemaps.org/schemas/sitemap/0.9"}
       ]
     }, 
@@ -168,7 +169,7 @@ The API-catalog lists all the known API endpoints.
 }
 ```
 
-This can mostly be repeated into the alternate variant in sitemap.xml format as a fallback to classic web-resouce harvesting.
+This can mostly be repeated into the alternate variant in sitemap.xml format as a fallback to classic web-resource harvesting.
 
 ```xml 
 <!-- https://marineinfo.org/.well-known/api-catalog/api-sitemap.xml -->
@@ -179,22 +180,22 @@ This can mostly be repeated into the alternate variant in sitemap.xml format as 
   <url>
     <loc>https://marineinfo.org/feed/dataset</loc>
     <rs:ln rel="profile"
-           href="https://w3id.org/ldes/specification">
+           href="https://w3id.org/ldes/specification" />
   </url>
   <url>
     <loc>https://marineinfo.org/feed/person</loc>
     <rs:ln rel="profile"
-           href="https://w3id.org/ldes/specification">
+           href="https://w3id.org/ldes/specification" />
   </url>
   <url>
     <loc>https://marineinfo.org/feed/institute</loc>
     <rs:ln rel="profile"
-           href="https://w3id.org/ldes/specification">
+           href="https://w3id.org/ldes/specification" />
   </url>
   <url>
     ... <!-- Repeated similarly for other types ... -->
   </url>
-<urlset>
+</urlset>
 ```
 
 
@@ -207,7 +208,7 @@ Finally each API endpoint can play a similar game to
 For the link relation:
 
 ```bash
-$ curl -LI --url "https://marineinfo.org/ldes/dataset"
+$ curl -LI --url "https://marineinfo.org/feed/dataset"
 
 HTTP/1.1 200 OK
 Link: <./dataset-feed.ls.json>    # e.g. for RT-P03 conneg menu and RT-P05 subsetting api
@@ -223,30 +224,31 @@ Link: </sitemaps/dataset-sitemap.xml>
 For the sitemap alternative:
 ```xml
 <!-- https://marineinfo.org/sitemaps/dataset-sitemap.xml -->
-<urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:rs="http://www.openarchives.org/rs/terms/">
   <url>
     <loc>https://marineinfo.org/id/dataset/1</loc>
     <!-- RT-P03 conneg menu -->
-    <rs:ln rel="linkset"  
-           href="https://marineinfo.org/id/dataset/1.ls.json" >
+    <rs:ln rel="linkset"
+           href="https://marineinfo.org/id/dataset/1.ls.json" />
     <!-- RT-P01 conformity declaration to semic's DCAT-AP -->
-    <rs:ln rel="profile"  
-           href="http://data.europa.eu/r5r/">
+    <rs:ln rel="profile"
+           href="http://data.europa.eu/r5r/" />
     <!-- strict rdfs:type like typing -->
-    <rs:ln rel="type"  
-           href="http://www.w3.org/ns/dcat#Dataset" >
+    <rs:ln rel="type"
+           href="http://www.w3.org/ns/dcat#Dataset" />
   </url>
   <url>
     ... <!-- Repeated similarly for other instances of this type ... -->
   </url>
-<urlset>
+</urlset>
 ```
 
 
 [RFC 4287]: https://www.rfc-editor.org/info/rfc4287                             "RFC 4287 The Atom Syndication Format"
 [RFC 6573]: https://www.rfc-editor.org/info/rfc6573                             "RFC 6573 Item/Collection Relations"
-[RFC 6596]: https://www.rfc-editor.org/info/rfc6596                             "RFC 6596 The Canonical Link Relation"
 [RFC 6906]: https://www.rfc-editor.org/info/rfc6906                             "RFC 6906 The 'profile' Link Relation"
+[RFC 8288]: https://www.rfc-editor.org/info/rfc8288                             "RFC 8288 Web Linking"
 [RFC 9727]: https://www.rfc-editor.org/info/rfc9727                             "RFC 9727 api-catalog"
 [sitemaps-org]: https://www.sitemaps.org/protocol.html                              "The Sitemaps protocol"
 [RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"

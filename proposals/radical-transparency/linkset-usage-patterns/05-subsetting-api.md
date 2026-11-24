@@ -52,12 +52,12 @@ which in turn holds:
 {
   "linkset": [
     {
-      "anchor": "<base-api-uri">
+      "anchor": "<base-api-uri>",
       "cite-as": [
         {"href": "<dataset-pid-uri>" }
       ],
       "api-catalog": [
-        {"href": "/.well-know/api-catalog" }
+        {"href": "/.well-known/api-catalog" }
       ],
       "service-desc": [
         {"href": "<machine-readable-api-description>"}
@@ -83,7 +83,7 @@ which in turn holds:
 
 As was the case with the previous pattern [RT-P03] a potential extra role can be played in this case by `rel=canonical` too.
 
-Just like was the case there, this relation allows, in the context of search-engines to defer, and accumulate matching hits, from subresources to the central aggregatting source. In practice this means each of the subresources (or fragments) would forefeit having deeplinks to themselves presented in seach-engine results in favor of linking back to the api-endpoint, or more likely given the human-oriented use of this search-engines its UI.
+Just like was the case there, this relation allows, in the context of search-engines to defer, and accumulate matching hits, from subresources to the central aggregatting source. In practice this means each of the subresources (or fragments) would forfeit having deep links to themselves presented in search-engine results in favor of linking back to the api-endpoint, or more likely given the human-oriented use of this search-engines its UI.
 
 It should be a careful consideration on the desired effect to actually apply this or not in any specific case.
 
@@ -101,7 +101,7 @@ The following link relations are mandated for declaring the machine-readable lin
 
 | Relation Type	     | Specification Source	                            | Technical Function | 
 | ------------------ | ------------------------------------------------ | ------------------ |
-| rel="cite-as"	     | [RFC 8574 - cite-as link relation][RFC 8574]     | Provides a Persistent Identifier (PID) as in [RT-P02] for the actual dataset from which this fragment is derived. Removes the need for clients to guess the canonical reference for citation or further attached metadata like provenance, licensing, ... 
+| rel="cite-as"	     | [RFC 8574 - cite-as link relation][RFC 8574]     | Provides a Persistent Identifier (PID) as in [RT-P04] for the actual dataset from which this fragment is derived. Removes the need for clients to guess the canonical reference for citation or further attached metadata like provenance, licensing, ... 
 | rel="collection"   | [RFC 6573 - item/collection relations][RFC 6573] | Points from any fragment to the parent base-uri or entrypoint for the api. This base identifies the entity that would be listed in an api-catalog, and have further links to formal descriptions.
 
 
@@ -114,7 +114,7 @@ Additionally we recommend cataloging and describing the webservice api by blendi
 | rel="service-desc" | [RFC 8631 - webservices link relations][RFC 8631]| Points to the API definition (e.g. OpenAPI). Enables deterministic discovery of the API contract, removing guesswork regarding endpoint structure or parameters.
 | rel="service-doc"  | [RFC 8631 - webservices link relations][RFC 8631]| Points to API documentation that is primarily intended for human consumption.
 | rel="service-meta" | [RFC 8631 - webservices link relations][RFC 8631]| Points to available metadata for the service context of the webservice API.
-| rel="status" 	     | [RFC 8631 - webservices link relations][RFC 8631]| Points to resources providing status information (like availability, uptime, preformance, ...) of the API.
+| rel="status" 	     | [RFC 8631 - webservices link relations][RFC 8631]| Points to resources providing status information (like availability, uptime, performance, ...) of the API.
 
 
 On top of this, we remind about earlier documented link-relation usage patterns in this series:
@@ -188,16 +188,16 @@ Content-type: application/linkset+json
 {
   "linkset": [
     {
-      "anchor": "https://marinespecies.org/rest/
+      "anchor": "https://marinespecies.org/rest/",
       "cite-as": [
         {"href": "https://doi.org/10.14284/170" }
       ],
       "api-catalog": [
-        {"href": "https://marinespecies.org/.well-know/api-catalog" }
+        {"href": "https://marinespecies.org/.well-known/api-catalog" }
       ],
       "service-desc": [
         {"href": "https://marinespecies.org/rest/api-docs/openapi.yaml",
-         "type": "application/x-yaml}
+         "type": "application/x-yaml"}
       ],
       "service-doc": [
         {"href": "https://marinespecies.org/rest",
@@ -229,7 +229,7 @@ Content-type: application/linkset+json
 {
   "linkset": [
     {
-      "anchor": "https://marinespecies.org/.well-know/api-catalog",
+      "anchor": "https://marinespecies.org/.well-known/api-catalog",
       "item": [
         {"href": "https://marinespecies.org/rest/"} 
       ],
@@ -253,7 +253,6 @@ Content-type: application/linkset+json
 [RFC 9727]: https://www.rfc-editor.org/info/rfc9727                             "RFC 9727 api-catalog"
 [IANA relreg]: https://www.iana.org/assignments/link-relations/                    "IANA register of Link Relations"
 [RT-P01]: ./01-profile-declaration.md                                         "Profile Declaration"
-[RT-P02]: ./02-profile-composition.md                                         "Profile Composition"
 [RT-P03]: ./03-content-negotiation-menu.md                                    "Content Negotiation Menu"
 [RT-P04]: ./04-no-landing-page-solution.md                                    "No Landing Page Solution"
 [RT-P05]: ./05-subsetting-api.md                                              "Subsetting API"

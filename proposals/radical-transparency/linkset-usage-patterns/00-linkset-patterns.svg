@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="975"
+   height="550"
+   viewBox="0 0 975 550"
+   version="1.1"
+   id="svg-master-map"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="00-linkset-patterns.svg"
+   inkscape:export-filename="00-linkset-patterns.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:current-layer="layer1"
+     inkscape:zoom="1.2687179"
+     inkscape:cx="503.26395"
+     inkscape:cy="314.8848"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1"
+       spacingx="5"
+       spacingy="5"
+       units="px"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <!-- Markers adhering to color palette -->
+    <marker
+       id="arrow-gray"
+       viewBox="0 0 10 10"
+       refX="7"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1.5 8,5 0,8.5 Z"
+         fill="#5e5c64"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrow-blue"
+       viewBox="0 0 10 10"
+       refX="7"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1.5 8,5 0,8.5 Z"
+         fill="#1a5fb4"
+         id="path2" />
+    </marker>
+    <marker
+       id="arrow-green"
+       viewBox="0 0 10 10"
+       refX="7"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1.5 8,5 0,8.5 Z"
+         fill="#26a269"
+         id="path3" />
+    </marker>
+    <marker
+       id="arrow-amber"
+       viewBox="0 0 10 10"
+       refX="7"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1.5 8,5 0,8.5 Z"
+         fill="#c64600"
+         id="path4" />
+    </marker>
+    <marker
+       id="arrow-yellow"
+       viewBox="0 0 10 10"
+       refX="7"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1.5 8,5 0,8.5 Z"
+         fill="#e5a50a"
+         id="path5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <!-- Background frame (matches rect6783 convention in other SVGs) -->
+    <!-- Main Title -->
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:16px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#241f31"
+       x="30"
+       y="32"
+       id="title-main"><tspan
+         sodipodi:role="line"
+         id="tspan-title"
+         x="30"
+         y="32">Master Map: Radical Transparency Linkset Usage Patterns (RT-P01 to RT-P10)</tspan></text>
+    <!-- ================================================================= -->
+    <!-- TOP TIER: FOUNDATIONAL SPECIFICATIONS & REGISTRIES -->
+    <!-- ================================================================= -->
+    <!-- Group 1: IANA Registers -->
+    <g
+       id="group-iana"
+       transform="translate(-5,-2)">
+      <rect
+         id="rect-iana"
+         x="30"
+         y="52"
+         width="150"
+         height="200"
+         rx="8"
+         ry="8"
+         style="fill:#deddda;fill-opacity:0.25;stroke:#5e5c64;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#5e5c64"
+         x="45"
+         y="74"
+         id="text-iana-hdr"><tspan
+           sodipodi:role="line"
+           id="tspan-iana"
+           x="45"
+           y="74">IANA registers</tspan></text>
+      <!-- Node: link relations -->
+      <rect
+         id="node-link-rel"
+         x="55.599998"
+         y="102"
+         width="98.800003"
+         height="49.400002"
+         rx="21"
+         ry="21.000002"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000"
+         x="105"
+         y="122"
+         id="text-link-rel"><tspan
+           sodipodi:role="line"
+           id="tspan-link-rel"
+           x="105"
+           y="122">link</tspan><tspan
+           sodipodi:role="line"
+           x="105"
+           y="137.15472"
+           id="tspan6">relations</tspan></text>
+      <!-- Node: profile uri -->
+      <rect
+         id="node-prof-uri"
+         x="55.599998"
+         y="177"
+         width="98.800003"
+         height="49.400002"
+         rx="21"
+         ry="21.000002"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000"
+         x="105"
+         y="197"
+         id="text-prof-uri"><tspan
+           sodipodi:role="line"
+           id="tspan-prof-uri"
+           x="105"
+           y="197">profile</tspan><tspan
+           sodipodi:role="line"
+           x="105"
+           y="212.15472"
+           id="tspan7">uri</tspan></text>
+    </g>
+    <!-- Group 2: IETF RFCs -->
+    <g
+       id="group-ietf"
+       transform="matrix(0.96144578,0,0,1,13.018072,-1.5)"
+       style="stroke-width:1.01985">
+      <rect
+         id="rect-ietf"
+         x="195"
+         y="52"
+         width="415"
+         height="200"
+         rx="8.3208017"
+         ry="8"
+         style="fill:#deddda;fill-opacity:0.25;stroke:#5e5c64;stroke-width:1.01985;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#5e5c64;stroke-width:1.01985"
+         x="210"
+         y="74"
+         id="text-rfc-hdr"><tspan
+           sodipodi:role="line"
+           id="tspan-rfc"
+           x="210"
+           y="74"
+           style="stroke-width:1.01985">RFC **</tspan></text>
+      <!-- Node: RFC 8288 (web linking) -->
+      <rect
+         id="node-rfc8288"
+         x="220.48245"
+         y="102.11145"
+         width="104.01003"
+         height="49.388546"
+         rx="21.842106"
+         ry="21"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.22382;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000;stroke-width:1.01985"
+         x="271.53961"
+         y="120.37109"
+         id="text-rfc8288"><tspan
+           sodipodi:role="line"
+           id="tspan-8288-1"
+           x="271.53961"
+           y="120.37109"
+           style="stroke-width:1.01985">rfc 8288</tspan><tspan
+           sodipodi:role="line"
+           id="tspan-8288-2"
+           x="271.53961"
+           y="134.92581"
+           style="font-weight:normal;font-size:10px;fill:#5e5c64;stroke-width:1.01985">web linking</tspan></text>
+      <!-- Node: RFC 9264 (linksets) -->
+      <rect
+         id="node-rfc9264"
+         x="351.10812"
+         y="102.11383"
+         width="103.40781"
+         height="48.772339"
+         rx="21.842106"
+         ry="21"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.22382;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000;stroke-width:1.01985"
+         x="402.5"
+         y="121.5"
+         id="text-rfc9264"><tspan
+           sodipodi:role="line"
+           id="tspan-9264-1"
+           x="402.5"
+           y="121.5"
+           style="stroke-width:1.01985">rfc 9264</tspan><tspan
+           sodipodi:role="line"
+           id="tspan-9264-2"
+           x="402.5"
+           y="136.05472"
+           style="font-weight:normal;font-size:10px;fill:#5e5c64;stroke-width:1.01985">linksets</tspan></text>
+      <!-- Node: RFC 9309 (robots exclusion) -->
+      <rect
+         id="node-rfc9309"
+         x="480.50919"
+         y="101.5"
+         width="103.39477"
+         height="50"
+         rx="21.842106"
+         ry="21"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.22382;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000;stroke-width:1.01985"
+         x="532.51251"
+         y="121.5"
+         id="text-rfc9309"><tspan
+           sodipodi:role="line"
+           id="tspan-9309-1"
+           x="532.51251"
+           y="121.5"
+           style="stroke-width:1.01985">rfc 9309</tspan><tspan
+           sodipodi:role="line"
+           id="tspan-9309-2"
+           x="532.51251"
+           y="136.05472"
+           style="font-weight:normal;font-size:10px;fill:#5e5c64;stroke-width:1.01985">robots exclusion</tspan></text>
+      <!-- Node: RFC 7284 (profile URI registry) -->
+      <rect
+         id="node-rfc7284"
+         x="220.48245"
+         y="176.5"
+         width="104.01003"
+         height="50"
+         rx="21.842106"
+         ry="21"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.22382;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000;stroke-width:1.01985"
+         x="272.48746"
+         y="196.5"
+         id="text-rfc7284"><tspan
+           sodipodi:role="line"
+           id="tspan-7284-1"
+           x="272.48746"
+           y="196.5"
+           style="stroke-width:1.01985">rfc 7284</tspan><tspan
+           sodipodi:role="line"
+           id="tspan-7284-2"
+           x="272.48746"
+           y="211.05472"
+           style="font-weight:normal;font-size:10px;fill:#5e5c64;stroke-width:1.01985">profile URI reg.</tspan></text>
+      <!-- Node: RFC 9727 (api-catalog) -->
+      <rect
+         id="node-rfc9727"
+         x="350.495"
+         y="176.5"
+         width="104.01002"
+         height="50"
+         rx="21.842106"
+         ry="21"
+         style="fill:#ffffff;stroke:#5e5c64;stroke-width:1.22382;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#000000;stroke-width:1.01985"
+         x="402.5"
+         y="196.5"
+         id="text-rfc9727"><tspan
+           sodipodi:role="line"
+           id="tspan-9727-1"
+           x="402.5"
+           y="196.5"
+           style="stroke-width:1.01985">rfc 9727</tspan><tspan
+           sodipodi:role="line"
+           id="tspan-9727-2"
+           x="402.5"
+           y="211.05472"
+           style="font-weight:normal;font-size:10px;fill:#5e5c64;stroke-width:1.01985">api-catalog</tspan></text>
+    </g>
+    <!-- Group 3: Sitemaps, ResourceSync & Signposting -->
+    <g
+       id="group-discovery"
+       transform="matrix(1,0,0,0.97794118,0,1.1029412)"
+       style="stroke-width:1.01122">
+      <!-- sitemaps.org -->
+      <rect
+         id="rect-sitemaps"
+         x="625"
+         y="50"
+         width="150"
+         height="90"
+         rx="8"
+         ry="8.1804514"
+         style="fill:#ffbe6f;fill-opacity:0.2;stroke:#c64600;stroke-width:1.01122;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#c64600;stroke-width:1.02256"
+         x="639.23193"
+         y="64.532707"
+         id="text-sitemaps-hdr"><tspan
+           sodipodi:role="line"
+           id="tspan-sitemaps"
+           x="639.23193"
+           y="64.532707"
+           style="stroke-width:1.01122">sitemaps.org</tspan></text>
+      <rect
+         id="node-sitemap-xml"
+         x="650.59998"
+         y="75.59977"
+         width="98.800026"
+         height="50.485474"
+         rx="21"
+         ry="21.473684"
+         style="fill:#ffffff;stroke:#c64600;stroke-width:1.21346;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#c64600;stroke-width:1.01122"
+         x="700"
+         y="106.2406"
+         id="text-sitemap-xml"><tspan
+           sodipodi:role="line"
+           id="tspan-sitemap-xml"
+           x="700"
+           y="106.2406"
+           style="stroke-width:1.01122">sitemap.xml</tspan></text>
+      <!-- OAI ResourceSync -->
+      <rect
+         id="rect-resourcesync"
+         x="800"
+         y="50.015038"
+         width="150"
+         height="92"
+         rx="8"
+         ry="8.1804514"
+         style="fill:#8ff0a4;fill-opacity:0.2;stroke:#26a269;stroke-width:1.01122;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#26a269;stroke-width:1.02256"
+         x="814.54297"
+         y="67.753372"
+         id="text-rs-hdr"><tspan
+           sodipodi:role="line"
+           id="tspan-rs"
+           x="814.54297"
+           y="67.753372"
+           style="stroke-width:1.01122">OAI ResourceSync</tspan></text>
+      <rect
+         id="node-xmlns-rs"
+         x="825"
+         y="75.562531"
+         width="100"
+         height="50.523811"
+         rx="21"
+         ry="21.473684"
+         style="fill:#ffffff;stroke:#26a269;stroke-width:1.21346;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#26a269;stroke-width:1.02256"
+         x="875"
+         y="106.2406"
+         id="text-xmlns-rs"><tspan
+           sodipodi:role="line"
+           id="tspan-xmlns-rs"
+           x="875"
+           y="106.2406"
+           style="stroke-width:1.01122">xmlns:rs/ln</tspan></text>
+      <!-- signposting.org -->
+      <rect
+         id="rect-signposting"
+         x="625"
+         y="152.76064"
+         width="325"
+         height="101.23995"
+         rx="8"
+         ry="8.1804514"
+         style="fill:#f9f06b;fill-opacity:0.25;stroke:#e5a50a;stroke-width:1.01122;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#a16207;stroke-width:1.02256"
+         x="639.23193"
+         y="169.95189"
+         id="text-signposting-hdr"><tspan
+           sodipodi:role="line"
+           id="tspan-signposting"
+           x="639.23193"
+           y="169.95189"
+           style="stroke-width:1.01122">signposting.org</tspan></text>
+      <rect
+         id="node-fair-signposting"
+         x="650.60144"
+         y="177.81955"
+         width="98.797119"
+         height="50.487236"
+         rx="22"
+         ry="22.496241"
+         style="fill:#ffffff;stroke:#e5a50a;stroke-width:1.21346;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#a16207;stroke-width:1.02256;fill-opacity:1"
+         x="700"
+         y="198.27068"
+         id="text-fair-signposting"><tspan
+           sodipodi:role="line"
+           id="tspan-fair-sp"
+           x="700"
+           y="198.27068"
+           style="stroke-width:1.01122;fill:#a16207;fill-opacity:1">FAIR</tspan><tspan
+           sodipodi:role="line"
+           x="700"
+           y="213.4254"
+           style="stroke-width:1.01122;fill:#a16207;fill-opacity:1"
+           id="tspan1">Signposting</tspan></text>
+      <rect
+         id="node-signmap"
+         x="825.59332"
+         y="178.42628"
+         width="98.799942"
+         height="50.489243"
+         rx="22"
+         ry="22.496241"
+         style="fill:#ffffff;stroke:#e5a50a;stroke-width:1.21346;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#a16207;stroke-width:1.02256;fill-opacity:1"
+         x="875"
+         y="203.38345"
+         id="text-signmap"><tspan
+           sodipodi:role="line"
+           id="tspan-signmap"
+           x="875"
+           y="203.38345"
+           style="stroke-width:1.01122;fill:#a16207;fill-opacity:1">SignMap</tspan></text>
+    </g>
+    <!-- Connectors between foundational standards -->
+    <path
+       d="m 150,125 75,0.30573"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-linkrel-8288"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 150,200 h 75"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-profuri-7284"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 325,125 h 25"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-8288-9264"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 450,125 h 25"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-9264-9309"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 575,125 c 50,0 25,-25 75,-25"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-9309-sitemap"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 325,200 h 25"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-7284-9727"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="M 400,175 V 150"
+       style="fill:none;stroke:#5e5c64;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-gray)"
+       id="p-9727-9264"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 700,125 c 0,30 150,9.18528 150,50"
+       style="fill:none;stroke:#c64600;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-amber)"
+       id="p-sitemap-signposting"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 875,126 -0.007,49.59335"
+       style="fill:none;stroke:#26a269;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-green)"
+       id="p-rs-signmap"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 750,200 h 75"
+       style="fill:none;stroke:#e5a50a;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-yellow)"
+       id="p-sp-signmap"
+       sodipodi:nodetypes="cc" />
+    <!-- Green dashed line: RFC 8288 across top to ResourceSync/SignMap -->
+    <path
+       d="m 275,100 c 0,-55 25,-55 340,-55 210,0 185,0 210,45"
+       style="fill:none;stroke:#26a269;stroke-width:1.3;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-green)"
+       id="p-8288-rs"
+       sodipodi:nodetypes="csc" />
+    <!-- ================================================================= -->
+    <!-- BOTTOM TIER: RADICAL TRANSPARENCY PATTERN SUITE (RT-P01 - RT-P10) -->
+    <!-- ================================================================= -->
+    <g
+       id="group-rt-suite"
+       transform="matrix(1.0054348,0,0,1,-4.0255936,-3)"
+       style="stroke-width:0.997294">
+      <rect
+         id="rect-rt-suite"
+         x="28.868698"
+         y="277.99854"
+         width="919.40155"
+         height="249.38931"
+         rx="9.9459457"
+         ry="10"
+         style="fill:#99c1f1;fill-opacity:0.12;stroke:#1a5fb4;stroke-width:1.19675;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5.98376, 3.98918" />
+      <!-- Clean Label at bottom margin of the container with 0 line collisions -->
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:13px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';fill:#1a5fb4;stroke-width:0.997294"
+         x="52.863934"
+         y="512.41992"
+         id="text-rt-title"><tspan
+           sodipodi:role="line"
+           id="tspan-rt-title"
+           x="52.863934"
+           y="512.41992"
+           style="stroke-width:0.997294">RADICAL TRANSPARENCY PATTERN SUITE (RT-P01 to RT-P10)</tspan></text>
+      <!-- Cluster: Profiles & Identity -->
+      <!-- RT-P01 -->
+      <g
+         id="g-ptn-01"
+         style="stroke-width:0.997294">
+        <rect
+           id="rect-ptn-01"
+           x="54.331936"
+           y="303"
+           width="147.99246"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="130.22273"
+           y="323.31833"
+           id="text-ptn-01"><tspan
+             sodipodi:role="line"
+             id="tspan-p01-1"
+             x="130.22273"
+             y="323.31833"
+             style="stroke-width:0.997294">01. profile</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p01-2"
+             x="130.22273"
+             y="337.87305"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">declaration</tspan></text>
+        <rect
+           id="rect9"
+           x="228.38631"
+           y="328"
+           width="148.59052"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect10"
+           x="228.38629"
+           y="403.29913"
+           width="147.99216"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect11"
+           x="54.331924"
+           y="428.59839"
+           width="147.99246"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect12"
+           x="402.44031"
+           y="353.29913"
+           width="147.99217"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect13"
+           x="402.44"
+           y="428.59839"
+           width="147.99248"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect14"
+           x="601.35895"
+           y="328.59839"
+           width="147.99246"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect15"
+           x="601.35895"
+           y="453.59839"
+           width="147.99246"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect16"
+           x="775.41302"
+           y="328"
+           width="147.99245"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+        <rect
+           id="rect17"
+           x="775.41302"
+           y="428.59839"
+           width="147.99245"
+           height="49.401718"
+           rx="23.87027"
+           ry="24"
+           style="fill:#99c1f1;fill-opacity:0.35;stroke:#1a5fb4;stroke-width:1.19676;stroke-linecap:round;stroke-linejoin:round" />
+      </g>
+      <!-- RT-P02 -->
+      <g
+         id="g-ptn-02"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="130.22244"
+           y="447.17035"
+           id="text-ptn-02"><tspan
+             sodipodi:role="line"
+             id="tspan-p02-1"
+             x="130.22244"
+             y="447.17035"
+             style="stroke-width:0.997294">02. profile</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p02-2"
+             x="130.22244"
+             y="461.72507"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">composition</tspan></text>
+      </g>
+      <!-- RT-P09 -->
+      <g
+         id="g-ptn-09"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="303.51352"
+           y="423"
+           id="text-ptn-09"><tspan
+             sodipodi:role="line"
+             id="tspan-p09-1"
+             x="303.51352"
+             y="423"
+             style="stroke-width:0.997294">09. version /</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p09-2"
+             x="303.51352"
+             y="437.55472"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">release linking</tspan></text>
+      </g>
+      <!-- RT-P03 -->
+      <g
+         id="g-ptn-03"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="303.51352"
+           y="348"
+           id="text-ptn-03"><tspan
+             sodipodi:role="line"
+             id="tspan-p03-1"
+             x="303.51352"
+             y="348"
+             style="stroke-width:0.997294">03. conneg menu</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p03-2"
+             x="303.51352"
+             y="362.55472"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">provisioning</tspan></text>
+      </g>
+      <!-- Cluster: Slicing, Splitting & Storage -->
+      <!-- RT-P05 -->
+      <g
+         id="g-ptn-05"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="477.56757"
+           y="373"
+           id="text-ptn-05"><tspan
+             sodipodi:role="line"
+             id="tspan-p05-1"
+             x="477.56757"
+             y="373"
+             style="stroke-width:0.997294">05. subsetting</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p05-2"
+             x="477.56757"
+             y="387.55472"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">api</tspan></text>
+      </g>
+      <!-- RT-P08 -->
+      <g
+         id="g-ptn-08"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="477.30093"
+           y="448.59839"
+           id="text-ptn-08"><tspan
+             sodipodi:role="line"
+             id="tspan-p08-1"
+             x="477.30093"
+             y="448.59839"
+             style="stroke-width:0.997294">08. large linksets</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p08-2"
+             x="477.30093"
+             y="463.15311"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">splits</tspan></text>
+      </g>
+      <!-- RT-P10 -->
+      <g
+         id="g-ptn-10"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="674.75677"
+           y="473.59839"
+           id="text-ptn-10"><tspan
+             sodipodi:role="line"
+             id="tspan-p10-1"
+             x="674.75677"
+             y="473.59839"
+             style="stroke-width:0.997294">10. detached</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p10-2"
+             x="674.75677"
+             y="488.15311"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">(offline) copies</tspan></text>
+      </g>
+      <!-- Cluster: Web Navigation & Federation -->
+      <!-- RT-P04 -->
+      <g
+         id="g-ptn-04"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="675.35516"
+           y="348"
+           id="text-ptn-04"><tspan
+             sodipodi:role="line"
+             id="tspan-p04-1"
+             x="675.35516"
+             y="348"
+             style="stroke-width:0.997294">04. no-landing-</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p04-2"
+             x="675.35516"
+             y="362.55472"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">page solution</tspan></text>
+      </g>
+      <!-- RT-P06 -->
+      <g
+         id="g-ptn-06"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="849.40924"
+           y="347.40161"
+           id="text-ptn-06"><tspan
+             sodipodi:role="line"
+             id="tspan-p06-1"
+             x="849.40924"
+             y="347.40161"
+             style="stroke-width:0.997294">06. hostwide</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p06-2"
+             x="849.40924"
+             y="361.95633"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">discovery</tspan></text>
+      </g>
+      <!-- RT-P07 -->
+      <g
+         id="g-ptn-07"
+         style="stroke-width:0.997294">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:12px;line-height:1.2;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono';text-anchor:middle;fill:#1a5fb4;stroke-width:0.997294"
+           x="849.40924"
+           y="448"
+           id="text-ptn-07"><tspan
+             sodipodi:role="line"
+             id="tspan-p07-1"
+             x="849.40924"
+             y="448"
+             style="stroke-width:0.997294">07. catalog</tspan><tspan
+             sodipodi:role="line"
+             id="tspan-p07-2"
+             x="849.40924"
+             y="462.55472"
+             style="font-weight:normal;font-size:10px;stroke-width:0.997294">assistance</tspan></text>
+      </g>
+    </g>
+    <!-- ================================================================= -->
+    <!-- VERTICAL TRACEABILITY ARROWS: FROM PATTERNS UP TO STANDARDS -->
+    <!-- ================================================================= -->
+    <!-- RT-P02 to RT-P01 -->
+    <path
+       d="M 125.86939,425.59839 125,350"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p02-p01"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P01 to profile uri / rfc 7284 -->
+    <path
+       d="M 125,300 C 125,250 75,275 75,225"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p01-profuri"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P09 to RT-P01 and RFC 8288 -->
+    <path
+       d="m 225,425 c -50,0 -75,-25 -75,-75"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p09-p01"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 325,400 c 0,-25 75,-24.69371 75,-50 0,-25 -72.5,-175 -90,-200"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p09-8288"
+       sodipodi:nodetypes="csc" />
+    <!-- RT-P03 to profile uri & RFC 8288 -->
+    <path
+       d="M 275,325 C 275,275 175,275 135,225"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p03-profuri"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="M 325,325 C 375,275 350,200 310,150"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p03-8288"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P05 to rfc 9727 (api-catalog) & rfc 9264 -->
+    <path
+       d="m 450,350 c 0,-50 -50,-75 -50,-125"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p05-9727"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="M 500,350 C 500,265 475,200 435,150"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p05-9264"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P08 to rfc 9264 linksets -->
+    <path
+       d="m 500,425 c 0,-25 75,-25 75,-50 0,-25 -100,-175 -140,-225"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p08-9264"
+       sodipodi:nodetypes="csc" />
+    <!-- RT-P10 to rfc 9264 linksets -->
+    <path
+       d="M 675,450 C 675,425 600,400 600,375 600,350 455,175 435,150"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p10-9264"
+       sodipodi:nodetypes="csc" />
+    <!-- RT-P04 to FAIR Signposting -->
+    <path
+       d="m 675,325 c 0,-50 25,-60 25,-100"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p04-signposting"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P06 to SignMap / sitemap.xml -->
+    <path
+       d="m 850,325 c 0,-50 25,-60 25,-100"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p06-signmap"
+       sodipodi:nodetypes="cc" />
+    <!-- RT-P07 to RT-P06 -->
+    <path
+       d="M 850.8694,425.59839 850,375"
+       style="fill:none;stroke:#1a5fb4;stroke-width:1.2;stroke-dasharray:4, 3"
+       marker-end="url(#arrow-blue)"
+       id="p-p07-p06"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
