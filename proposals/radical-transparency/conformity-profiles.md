@@ -1,3 +1,6 @@
+> [!WARNING]
+> **OBSOLETE / SUPERSEDED DRAFT:** This document was an early initial exploration of conformity profiles and is now obsolete. It has been superseded by the Linkset Usage Patterns series (`./linkset-usage-patterns/00-linkset-patterns.md` and `./linkset-usage-patterns/01-profile-declaration.md`) and will not be migrated to the canonical `radical-transparency-net` repository.
+
 # Radical Transparency through conformity-profile declarations
 
 ## Core idea
