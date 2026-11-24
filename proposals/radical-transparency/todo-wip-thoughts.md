@@ -11,9 +11,10 @@
   * RT-P08: ✅ Large Linkset Splits (Paging and OGC-style large map handling)
   * RT-P09: ✅ Version / Release Linking (Handling the timeline of both resources and profiles)
   * RT-P10: ✅ Offline (Detached) Copies (For filesystem/detached verification)
-  * RT-P11: API-UI & Aggregate Content Parts (Context of SPAs and JS-rendered content)
-  * RT-P12: Web Manifests
+  * RT-P11 & RT-P12 (in the fridge for a future iteration): API-UI & Aggregate Content Parts / Web Manifests
+  * Note: `conformity-profiles.md` has been marked obsolete/superseded by `00` and `01`
 * and some support docs
+  * RT-DPP: Position Paper. 
   * RT-D14: Mapping & RDF Uplifting (Guide on semantic equivalence across headers, HTML, and triples)
   * RT-D15: Profile Registry & Description Vision (Strategic vision for registries like cpurr)
   * RT-D16: RFC Anthology (New: A concise technical sketch of the foundational IETF standards involved)
