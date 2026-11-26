@@ -16,6 +16,6 @@ Dare to start your own proposal-subfolder and trigger some collaboration around 
 
 ## current proposals in process
 
-* [Radical Transparency through conformity-profile declarations](./proposals/radical-transparency/conformity-profiles.md).
+* **Graduated:** [Radical Transparency](./proposals/radical-transparency/README.md) — moved to <https://radical-transparency.net/> ([Linkset Usage Patterns Specification](https://radical-transparency.net/spec-linkset-usage-patterns/)).
 
 
